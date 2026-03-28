@@ -23,7 +23,7 @@ export function Login() {
   const { signIn, enterDemoMode } = useAuth();
 
   return (
-    <div className="min-h-screen bg-bg flex overflow-hidden relative">
+    <div className="min-h-screen bg-bg flex flex-col lg:flex-row overflow-hidden relative">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -35,13 +35,13 @@ export function Login() {
       />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/3 size-96 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 size-64 rounded-full bg-ghost/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 size-72 sm:size-96 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 size-48 sm:size-64 rounded-full bg-ghost/5 blur-3xl pointer-events-none" />
 
       {/* Left panel */}
-      <div className="flex-1 flex flex-col justify-center px-16 py-12 relative z-10 max-w-xl">
+      <div className="flex-1 flex flex-col justify-center px-4 py-8 sm:px-8 sm:py-12 lg:px-16 relative z-10 max-w-2xl">
         {/* Logo */}
-        <div className="flex items-center gap-3 mb-16">
+        <div className="flex items-center gap-3 mb-10 sm:mb-14 lg:mb-16">
           <div className="size-10 rounded-xl bg-accent/15 border border-accent/20 flex items-center justify-center">
             <Ghost size={22} className="text-accent" />
           </div>
@@ -51,20 +51,20 @@ export function Login() {
         </div>
 
         {/* Headline */}
-        <div className="mb-10">
-          <h1 className="font-display font-semibold text-5xl text-text-primary leading-tight mb-4">
+        <div className="mb-8 sm:mb-10">
+          <h1 className="font-display font-semibold text-3xl sm:text-4xl lg:text-5xl text-text-primary leading-tight mb-4">
             Stop wondering
             <br />
             <span className="text-accent">who ghosted you.</span>
           </h1>
-          <p className="text-text-secondary text-lg leading-relaxed">
+          <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
             Connect your Gmail once. We'll automatically track every job
             application and flag companies that have gone silent.
           </p>
         </div>
 
         {/* Features */}
-        <div className="space-y-5 mb-12">
+        <div className="space-y-4 sm:space-y-5 mb-10 sm:mb-12">
           {FEATURES.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="flex items-start gap-4">
               <div className="size-8 rounded-lg bg-surface border border-border flex items-center justify-center flex-shrink-0 mt-0.5">

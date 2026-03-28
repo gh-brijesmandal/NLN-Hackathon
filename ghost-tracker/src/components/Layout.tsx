@@ -10,10 +10,10 @@ interface Props {
 
 export function Layout({ onRefresh, scan }: Props) {
   return (
-    <div className="flex h-screen bg-bg overflow-hidden">
+    <div className="min-h-screen bg-bg md:flex md:h-screen md:overflow-hidden">
       {scan.isScanning && <ScanOverlay scan={scan} />}
       <Sidebar onRefresh={onRefresh} isScanning={scan.isScanning} />
-      <main className="flex-1 overflow-y-auto">
+      <main className="min-w-0 flex-1 overflow-y-auto">
         <Outlet />
       </main>
     </div>

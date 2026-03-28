@@ -37,7 +37,7 @@ export function GhostMeter({ daysSinceActivity, isGhosted, className }: Props) {
       </div>
       <span
         className={clsx(
-          'font-mono text-xs w-16 text-right flex-shrink-0',
+          'font-mono text-[11px] sm:text-xs w-auto sm:w-16 text-left sm:text-right flex-shrink-0',
           isGhosted ? 'text-warn' : 'text-text-muted'
         )}
       >

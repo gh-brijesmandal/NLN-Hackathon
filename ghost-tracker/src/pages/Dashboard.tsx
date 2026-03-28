@@ -37,13 +37,13 @@ export function Dashboard({ applications, stats, onScan, hasLoaded }: Props) {
   };
 
   return (
-    <div className="p-8 max-w-6xl mx-auto animate-fade-in">
+    <div className="max-w-6xl mx-auto px-4 py-5 sm:px-6 sm:py-8 lg:px-8 animate-fade-in">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <div className="font-mono text-xs text-text-muted mb-1">
           {greeting()}, {auth.userName?.split(' ')[0] ?? 'there'} —
         </div>
-        <h1 className="font-display font-semibold text-3xl text-text-primary">
+        <h1 className="font-display font-semibold text-2xl sm:text-3xl text-text-primary">
           Your job search, tracked.
         </h1>
         {auth.scannedAt && (
@@ -54,7 +54,7 @@ export function Dashboard({ applications, stats, onScan, hasLoaded }: Props) {
       </div>
 
       {/* Stats row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
         <StatCard label="Total applications" value={stats.total} icon={Inbox} />
         <StatCard label="Active" value={stats.active} icon={TrendingUp} accent="accent" />
         <StatCard label="Ghosted" value={stats.ghosted} icon={Ghost} accent="warn" />
@@ -67,10 +67,10 @@ export function Dashboard({ applications, stats, onScan, hasLoaded }: Props) {
         />
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
         {/* Recent applications */}
-        <div className="lg:col-span-2 bg-surface border border-border rounded-2xl overflow-hidden">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <div className="xl:col-span-2 bg-surface border border-border rounded-2xl overflow-hidden">
+          <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-4 sm:px-6 border-b border-border">
             <span className="font-semibold text-text-primary text-sm">Recent Applications</span>
             <Link
               to="/tracker"
@@ -188,26 +188,29 @@ function AppRow({ app }: { app: Application }) {
   const color = colors[app.company.charCodeAt(0) % colors.length];
 
   return (
-    <div className="flex items-center gap-4 px-6 py-4 hover:bg-white/[0.02] transition-colors">
-      <div
-        className={`size-10 rounded-xl flex items-center justify-center font-mono text-xs font-medium flex-shrink-0 ${color}`}
-      >
-        {initials}
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-0.5">
-          <span className="font-medium text-text-primary text-sm">{app.company}</span>
-          <StatusBadge status={app.status} size="sm" />
+    <div className="px-4 py-4 sm:px-6 hover:bg-white/[0.02] transition-colors">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <div className="flex items-start gap-3 min-w-0 flex-1">
+          <div
+            className={`size-10 rounded-xl flex items-center justify-center font-mono text-xs font-medium flex-shrink-0 ${color}`}
+          >
+            {initials}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap items-center gap-2 mb-0.5">
+              <span className="font-medium text-text-primary text-sm">{app.company}</span>
+              <StatusBadge status={app.status} size="sm" />
+            </div>
+            <div className="font-mono text-xs text-text-muted truncate">{app.role}</div>
+            <GhostMeter
+              daysSinceActivity={app.daysSinceActivity}
+              isGhosted={app.isGhosted}
+              className="mt-2 max-w-sm"
+            />
+          </div>
         </div>
-        <div className="font-mono text-xs text-text-muted truncate">{app.role}</div>
-        <GhostMeter
-          daysSinceActivity={app.daysSinceActivity}
-          isGhosted={app.isGhosted}
-          className="mt-2 max-w-xs"
-        />
-      </div>
-      <div className="text-right flex-shrink-0">
-        <div className="font-mono text-xs text-text-muted">
+
+        <div className="font-mono text-[11px] sm:text-xs text-text-muted sm:text-right sm:flex-shrink-0">
           {formatDistanceToNow(new Date(app.appliedDate), { addSuffix: true })}
         </div>
       </div>

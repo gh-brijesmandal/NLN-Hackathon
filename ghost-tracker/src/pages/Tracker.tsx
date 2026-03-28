@@ -54,10 +54,10 @@ export function Tracker({ applications, hasLoaded }: Props) {
   }, [applications, statusFilter, query, sortBy]);
 
   return (
-    <div className="p-8 max-w-6xl mx-auto animate-fade-in">
+    <div className="max-w-6xl mx-auto px-4 py-5 sm:px-6 sm:py-8 lg:px-8 animate-fade-in">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="font-display font-semibold text-3xl text-text-primary mb-1">
+        <h1 className="font-display font-semibold text-2xl sm:text-3xl text-text-primary mb-1">
           Applications
         </h1>
         <p className="font-mono text-xs text-text-muted">
@@ -66,7 +66,7 @@ export function Tracker({ applications, hasLoaded }: Props) {
       </div>
 
       {/* Controls */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-6">
+      <div className="flex flex-col lg:flex-row gap-3 mb-5 sm:mb-6">
         {/* Search */}
         <div className="relative flex-1">
           <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted" />
@@ -80,12 +80,12 @@ export function Tracker({ applications, hasLoaded }: Props) {
         </div>
 
         {/* Sort */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full sm:w-auto">
           <Filter size={13} className="text-text-muted flex-shrink-0" />
           <select
             value={sortBy}
             onChange={e => setSortBy(e.target.value as typeof sortBy)}
-            className="bg-surface border border-border rounded-xl px-3 py-2.5 font-mono text-xs text-text-secondary focus:outline-none focus:border-muted transition-colors"
+            className="w-full sm:w-auto bg-surface border border-border rounded-xl px-3 py-2.5 font-mono text-xs text-text-secondary focus:outline-none focus:border-muted transition-colors"
           >
             <option value="date">Sort: Applied date</option>
             <option value="activity">Sort: Longest silent</option>
@@ -95,7 +95,7 @@ export function Tracker({ applications, hasLoaded }: Props) {
       </div>
 
       {/* Status filter pills */}
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex gap-2 overflow-x-auto pb-1 mb-5 sm:mb-6">
         {STATUS_FILTERS.map(({ value, label }) => {
           const count =
             value === 'all'
@@ -106,7 +106,7 @@ export function Tracker({ applications, hasLoaded }: Props) {
             <button
               key={value}
               onClick={() => setStatusFilter(value)}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border font-mono text-xs transition-all ${
+              className={`shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border font-mono text-xs transition-all ${
                 isActive
                   ? 'bg-accent/15 border-accent/30 text-accent'
                   : 'bg-surface border-border text-text-muted hover:border-muted hover:text-text-secondary'
@@ -125,9 +125,38 @@ export function Tracker({ applications, hasLoaded }: Props) {
         })}
       </div>
 
-      {/* Table */}
-      <div className="bg-surface border border-border rounded-2xl overflow-hidden">
-        {/* Table head */}
+      {/* Mobile cards */}
+      <div className="md:hidden bg-surface border border-border rounded-2xl overflow-hidden">
+        {!hasLoaded ? (
+          <div className="p-4 space-y-3">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="rounded-xl border border-border p-4 space-y-3 animate-pulse">
+                <div className="h-3 bg-border rounded w-2/5" />
+                <div className="h-2 bg-border rounded w-3/5" />
+                <div className="h-6 bg-border rounded-full w-20" />
+                <div className="h-2 bg-border rounded" />
+              </div>
+            ))}
+          </div>
+        ) : filtered.length === 0 ? (
+          <div className="flex flex-col items-center justify-center px-6 py-16 text-center">
+            <Ghost size={30} className="text-text-muted mb-3" />
+            <div className="font-semibold text-text-secondary text-sm">No applications found</div>
+            <div className="font-mono text-xs text-text-muted mt-1">
+              {query ? `No results for "${query}"` : 'Try a different filter'}
+            </div>
+          </div>
+        ) : (
+          <div className="divide-y divide-border">
+            {filtered.map(app => (
+              <TrackerCard key={app.id} app={app} />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block bg-surface border border-border rounded-2xl overflow-hidden">
         <div className="grid grid-cols-[2fr_1fr_1fr_1.5fr] gap-4 px-6 py-3 border-b border-border">
           {['Company / Role', 'Status', 'Applied', 'Ghost Meter'].map(h => (
             <div key={h} className="font-mono text-xs text-text-muted">
@@ -136,7 +165,6 @@ export function Tracker({ applications, hasLoaded }: Props) {
           ))}
         </div>
 
-        {/* Rows */}
         {!hasLoaded ? (
           <div className="p-6 space-y-4">
             {[...Array(6)].map((_, i) => (
@@ -167,6 +195,47 @@ export function Tracker({ applications, hasLoaded }: Props) {
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+function TrackerCard({ app }: { app: Application }) {
+  const initials = app.company.slice(0, 2).toUpperCase();
+  const colors = [
+    'bg-accent/10 text-accent',
+    'bg-ghost/10 text-ghost',
+    'bg-warn/10 text-warn',
+    'bg-danger/10 text-danger',
+  ];
+  const color = colors[app.company.charCodeAt(0) % colors.length];
+
+  return (
+    <div className="p-4">
+      <div className="flex items-start gap-3">
+        <div
+          className={`size-9 rounded-lg flex items-center justify-center font-mono text-xs font-medium flex-shrink-0 ${color}`}
+        >
+          {initials}
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="font-medium text-text-primary text-sm truncate">{app.company}</div>
+          <div className="font-mono text-xs text-text-muted truncate mt-0.5">{app.role}</div>
+          <div className="mt-2">
+            <StatusBadge status={app.status} size="sm" />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-3 flex items-center justify-between gap-2 font-mono text-xs text-text-muted">
+        <span>Applied {format(new Date(app.appliedDate), 'MMM d')}</span>
+        <span>{formatDistanceToNow(new Date(app.appliedDate), { addSuffix: true })}</span>
+      </div>
+
+      <GhostMeter
+        daysSinceActivity={app.daysSinceActivity}
+        isGhosted={app.isGhosted}
+        className="mt-3"
+      />
     </div>
   );
 }

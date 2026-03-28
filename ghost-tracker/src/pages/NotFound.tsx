@@ -7,10 +7,10 @@ export function NotFound() {
       <div className="animate-float mb-6">
         <Ghost size={56} className="text-accent opacity-80" />
       </div>
-      <div className="font-display font-semibold text-8xl text-text-primary opacity-10 mb-4 select-none">
+      <div className="font-display font-semibold text-6xl sm:text-8xl text-text-primary opacity-10 mb-4 select-none">
         404
       </div>
-      <div className="font-display font-semibold text-2xl text-text-primary mb-2">
+      <div className="font-display font-semibold text-xl sm:text-2xl text-text-primary mb-2">
         This route got ghosted.
       </div>
       <div className="font-mono text-sm text-text-muted mb-8">

@@ -6,12 +6,19 @@
   html {
     background-color: #080c10;
     color: #e8f0f8;
+    min-height: 100%;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     font-family: 'Cabinet Grotesk', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #root {
     min-height: 100vh;
   }
 

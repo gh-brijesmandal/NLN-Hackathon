@@ -13,9 +13,9 @@ export function Settings() {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto animate-fade-in">
-      <div className="mb-8">
-        <h1 className="font-display font-semibold text-3xl text-text-primary mb-1">Settings</h1>
+    <div className="max-w-2xl mx-auto px-4 py-5 sm:px-6 sm:py-8 lg:px-8 animate-fade-in">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="font-display font-semibold text-2xl sm:text-3xl text-text-primary mb-1">Settings</h1>
         <p className="font-mono text-xs text-text-muted">Manage your account and preferences</p>
       </div>
 
@@ -23,7 +23,7 @@ export function Settings() {
       <section className="mb-6">
         <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Account</div>
         <div className="bg-surface border border-border rounded-2xl p-5">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             {auth.userAvatar ? (
               <img src={auth.userAvatar} alt="" className="size-12 rounded-xl ring-1 ring-border" />
             ) : (
@@ -46,7 +46,7 @@ export function Settings() {
             </div>
             <button
               onClick={signOut}
-              className="ml-auto flex items-center gap-2 px-4 py-2 rounded-xl bg-danger/10 text-danger border border-danger/20 font-mono text-xs hover:bg-danger/20 transition-all"
+              className="w-full sm:w-auto sm:ml-auto flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-danger/10 text-danger border border-danger/20 font-mono text-xs hover:bg-danger/20 transition-all"
             >
               <LogOut size={13} />
               Sign out
@@ -73,8 +73,8 @@ export function Settings() {
             </div>
           </div>
 
-          <div className="pl-11">
-            <div className="flex items-center gap-4">
+          <div className="pl-0 sm:pl-11">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <input
                 type="range"
                 min={7}
@@ -84,7 +84,7 @@ export function Settings() {
                 onChange={e => setGhostDays(Number(e.target.value))}
                 className="flex-1 accent-accent"
               />
-              <div className="font-display font-semibold text-2xl text-accent w-16 text-right">
+              <div className="font-display font-semibold text-2xl text-accent w-full sm:w-16 text-left sm:text-right">
                 {ghostDays}d
               </div>
             </div>
@@ -136,7 +136,7 @@ export function Settings() {
       {/* Save */}
       <button
         onClick={handleSave}
-        className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all ${
+        className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all ${
           saved
             ? 'bg-accent/20 text-accent border border-accent/30'
             : 'bg-accent text-bg hover:bg-accent/90 shadow-lg shadow-accent/20'
