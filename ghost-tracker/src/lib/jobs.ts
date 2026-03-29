@@ -5,6 +5,7 @@ import type {
   RedditPost,
 } from "../types";
 import communityPosts from "../data/communityPosts.json";
+import h1bCompaniesRaw from "../data/H1B_Company.json";
 
 // Fetch jobs from Remotive API (no auth needed, CORS ok)
 export async function fetchJobSuggestions(
@@ -61,362 +62,49 @@ export async function fetchH1BCompanies(query: string): Promise<H1BCompany[]> {
   const all = getH1BList();
   if (!query.trim()) return all.slice(0, 50);
   const q = query.toLowerCase();
-  return all.filter((c) => c.employer.toLowerCase().includes(q)).slice(0, 50);
+  return all
+    .filter(
+      (c) =>
+        c.employer.toLowerCase().includes(q) ||
+        (c.industry ?? "").toLowerCase().includes(q),
+    )
+    .slice(0, 50);
 }
 
 function getH1BList(): H1BCompany[] {
-  return [
-    {
-      employer: "Amazon",
-      approvals: 18000,
-      denials: 400,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Google",
-      approvals: 14000,
-      denials: 200,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Microsoft",
-      approvals: 12000,
-      denials: 300,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Meta",
-      approvals: 6000,
-      denials: 150,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Apple",
-      approvals: 5000,
-      denials: 100,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Infosys",
-      approvals: 22000,
-      denials: 800,
-      year: 2023,
-      industry: "IT Services",
-    },
-    {
-      employer: "Tata Consultancy Services",
-      approvals: 20000,
-      denials: 700,
-      year: 2023,
-      industry: "IT Services",
-    },
-    {
-      employer: "Wipro",
-      approvals: 10000,
-      denials: 400,
-      year: 2023,
-      industry: "IT Services",
-    },
-    {
-      employer: "IBM",
-      approvals: 8000,
-      denials: 300,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Cognizant",
-      approvals: 15000,
-      denials: 600,
-      year: 2023,
-      industry: "IT Services",
-    },
-    {
-      employer: "Deloitte",
-      approvals: 3000,
-      denials: 200,
-      year: 2023,
-      industry: "Consulting",
-    },
-    {
-      employer: "Accenture",
-      approvals: 5000,
-      denials: 250,
-      year: 2023,
-      industry: "Consulting",
-    },
-    {
-      employer: "Salesforce",
-      approvals: 2500,
-      denials: 80,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Oracle",
-      approvals: 4000,
-      denials: 150,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Intel",
-      approvals: 3000,
-      denials: 100,
-      year: 2023,
-      industry: "Semiconductor",
-    },
-    {
-      employer: "Qualcomm",
-      approvals: 2000,
-      denials: 70,
-      year: 2023,
-      industry: "Semiconductor",
-    },
-    {
-      employer: "Netflix",
-      approvals: 800,
-      denials: 30,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Uber",
-      approvals: 1500,
-      denials: 60,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Airbnb",
-      approvals: 700,
-      denials: 20,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Stripe",
-      approvals: 900,
-      denials: 25,
-      year: 2023,
-      industry: "Fintech",
-    },
-    {
-      employer: "Databricks",
-      approvals: 600,
-      denials: 15,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Snowflake",
-      approvals: 700,
-      denials: 20,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Adobe",
-      approvals: 3500,
-      denials: 120,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "ServiceNow",
-      approvals: 1200,
-      denials: 40,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Palantir",
-      approvals: 500,
-      denials: 15,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Twitter / X",
-      approvals: 600,
-      denials: 20,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "LinkedIn",
-      approvals: 2000,
-      denials: 70,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Nvidia",
-      approvals: 2500,
-      denials: 80,
-      year: 2023,
-      industry: "Semiconductor",
-    },
-    {
-      employer: "AMD",
-      approvals: 1800,
-      denials: 60,
-      year: 2023,
-      industry: "Semiconductor",
-    },
-    {
-      employer: "Cisco",
-      approvals: 4000,
-      denials: 150,
-      year: 2023,
-      industry: "Networking",
-    },
-    {
-      employer: "Goldman Sachs",
-      approvals: 2000,
-      denials: 100,
-      year: 2023,
-      industry: "Finance",
-    },
-    {
-      employer: "JPMorgan Chase",
-      approvals: 2500,
-      denials: 120,
-      year: 2023,
-      industry: "Finance",
-    },
-    {
-      employer: "Morgan Stanley",
-      approvals: 1500,
-      denials: 80,
-      year: 2023,
-      industry: "Finance",
-    },
-    {
-      employer: "McKinsey",
-      approvals: 800,
-      denials: 30,
-      year: 2023,
-      industry: "Consulting",
-    },
-    {
-      employer: "Boston Consulting Group",
-      approvals: 600,
-      denials: 20,
-      year: 2023,
-      industry: "Consulting",
-    },
-    {
-      employer: "Capital One",
-      approvals: 1200,
-      denials: 50,
-      year: 2023,
-      industry: "Fintech",
-    },
-    {
-      employer: "Visa",
-      approvals: 1500,
-      denials: 60,
-      year: 2023,
-      industry: "Fintech",
-    },
-    {
-      employer: "PayPal",
-      approvals: 1800,
-      denials: 70,
-      year: 2023,
-      industry: "Fintech",
-    },
-    {
-      employer: "Block (Square)",
-      approvals: 600,
-      denials: 20,
-      year: 2023,
-      industry: "Fintech",
-    },
-    {
-      employer: "Lyft",
-      approvals: 800,
-      denials: 30,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Spotify",
-      approvals: 500,
-      denials: 15,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Pinterest",
-      approvals: 400,
-      denials: 10,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Twilio",
-      approvals: 500,
-      denials: 15,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Cloudflare",
-      approvals: 400,
-      denials: 10,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "HubSpot",
-      approvals: 350,
-      denials: 10,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Workday",
-      approvals: 1200,
-      denials: 40,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Zoom",
-      approvals: 700,
-      denials: 20,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Atlassian",
-      approvals: 600,
-      denials: 20,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "GitHub",
-      approvals: 300,
-      denials: 8,
-      year: 2023,
-      industry: "Tech",
-    },
-    {
-      employer: "Shopify",
-      approvals: 400,
-      denials: 12,
-      year: 2023,
-      industry: "Tech",
-    },
-  ];
+  const rows = Array.isArray(h1bCompaniesRaw)
+    ? (h1bCompaniesRaw as Array<Record<string, unknown>>)
+    : [];
+
+  return rows
+    .map((row) => {
+      const employer = String(row["Company Name"] ?? "").trim();
+      if (!employer) return null;
+
+      const industry = String(row["Industry"] ?? "Other")
+        .replace(/\//g, " / ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      const petitionsValue = Number(row["Petitions (2024-25 Est.)"] ?? 0);
+
+      const petitions = Number.isFinite(petitionsValue)
+        ? Math.max(0, Math.round(petitionsValue))
+        : 0;
+
+      const website = `https://www.google.com/search?q=${encodeURIComponent(
+        `${employer} official website`,
+      )}`;
+
+      return {
+        employer,
+        approvals: petitions,
+        year: 2025,
+        industry,
+        website,
+      } as H1BCompany;
+    })
+    .filter((company): company is H1BCompany => company !== null);
 }
 
 // Returns community posts from static JSON

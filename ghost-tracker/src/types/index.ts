@@ -110,9 +110,9 @@ export interface JobSuggestion {
 export interface H1BCompany {
   employer: string;
   approvals: number;
-  denials: number;
   year: number;
   industry?: string;
+  website?: string;
 }
 
 export interface AISettings {
