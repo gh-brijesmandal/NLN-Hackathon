@@ -34,7 +34,12 @@ function AppRoutes() {
   }, [auth.accessToken, isDemoMode, scanInbox]);
 
   if (!auth.isAuthenticated && !isDemoMode) {
-    return <Routes><Route path="*" element={<Login />} /></Routes>;
+    return (
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    );
   }
 
   return (
