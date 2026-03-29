@@ -2,8 +2,6 @@ import type { AuthState } from '../types';
 
 // All data is stored in localStorage — nothing goes to any server
 
-import type { AuthState } from '../types';
-
 const KEYS = {
   PROFILE: 'jt_profile',
   APPLICATIONS: 'jt_applications',

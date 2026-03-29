@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useCallback, useEffect, useRef } from 'react';
 import type { AuthState } from '../types';
 import { fetchUserProfile } from '../lib/gmail.ts';
-import { loadAuthSessionCookie, saveAuthSessionCookie, clearAuthSessionCookie } from '../lib/storage';
+import { loadAuthSession, saveAuthSession, clearAuthSession } from '../lib/storage';
 
 interface AuthContextValue {
   auth: AuthState;
@@ -37,8 +37,9 @@ const DEFAULT_AUTH_STATE: AuthState = {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const oauthClientIdConfigured = Boolean(CLIENT_ID);
-  const [auth, setAuth] = useState<AuthState>(() => loadAuthSessionCookie() ?? DEFAULT_AUTH_STATE);
-  const [isDemoMode, setIsDemoMode] = useState(false);
+  const persistedSession = loadAuthSession();
+  const [auth, setAuth] = useState<AuthState>(() => persistedSession?.auth ?? DEFAULT_AUTH_STATE);
+  const [isDemoMode, setIsDemoMode] = useState<boolean>(() => persistedSession?.isDemoMode ?? false);
   const [isSigningIn, setIsSigningIn] = useState(false);
   const signInLockRef = useRef(false);
   const [googleScriptLoaded, setGoogleScriptLoaded] = useState(
@@ -51,7 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsSigningIn(false);
   }, []);
 
-  const handleCredentialResponse = useCallback(async (token: string, expiresInSeconds?: number) => {
+  const handleCredentialResponse = useCallback(async (token: string) => {
     try {
       const profile = await fetchUserProfile(token);
       const nextAuth: AuthState = {
@@ -64,7 +65,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       };
 
       setAuth(nextAuth);
-      saveAuthSessionCookie(nextAuth, Math.max(60, Math.min(expiresInSeconds ?? 3600, 86400)));
+      saveAuthSession(nextAuth, false);
       setIsDemoMode(false);
       setOauthError(null);
     } catch (e) {
@@ -139,7 +140,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           return;
         }
 
-        await handleCredentialResponse(response.access_token, response.expires_in);
+        await handleCredentialResponse(response.access_token);
       },
       error_callback: (response: { type?: string }) => {
         if (response.type === 'popup_failed_to_open' || response.type === 'popup_closed') {
@@ -170,7 +171,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (auth.accessToken && (window as any).google?.accounts?.oauth2) {
       (window as any).google.accounts.oauth2.revoke(auth.accessToken);
     }
-    clearAuthSessionCookie();
+    clearAuthSession();
     setAuth(DEFAULT_AUTH_STATE);
     setIsDemoMode(false);
     finishSignIn();
@@ -178,10 +179,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [auth.accessToken, finishSignIn]);
 
   const enterDemoMode = useCallback(() => {
-    clearAuthSessionCookie();
-    setIsDemoMode(true);
-    setOauthError(null);
-    setAuth({
+    clearAuthSession();
+    const nextAuth: AuthState = {
       isAuthenticated: true,
       accessToken: null,
       userEmail: 'demo@example.com',
@@ -189,7 +188,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       userAvatar: null,
       scannedAt: new Date().toISOString(),
     };
+
     setIsDemoMode(true);
+    setOauthError(null);
     setAuth(nextAuth);
     saveAuthSession(nextAuth, true);
   }, []);
