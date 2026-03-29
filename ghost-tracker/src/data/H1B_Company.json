@@ -1,0 +1,3495 @@
+[
+    {
+        "Rank":1,
+        "Company Name":"Amazon",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":30081,
+        "Approval %":0.98
+    },
+    {
+        "Rank":2,
+        "Company Name":"Cognizant",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":22397,
+        "Approval %":0.98
+    },
+    {
+        "Rank":3,
+        "Company Name":"EY",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":19882,
+        "Approval %":0.95
+    },
+    {
+        "Rank":4,
+        "Company Name":"Microsoft",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":18852,
+        "Approval %":0.96
+    },
+    {
+        "Rank":5,
+        "Company Name":"Google",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":17720,
+        "Approval %":0.97
+    },
+    {
+        "Rank":6,
+        "Company Name":"TCS",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":17465,
+        "Approval %":0.97
+    },
+    {
+        "Rank":7,
+        "Company Name":"Infosys",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":11653,
+        "Approval %":0.99
+    },
+    {
+        "Rank":8,
+        "Company Name":"Apple",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":10832,
+        "Approval %":0.95
+    },
+    {
+        "Rank":9,
+        "Company Name":"Meta Platforms",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":9669,
+        "Approval %":0.97
+    },
+    {
+        "Rank":10,
+        "Company Name":"Wal-mart Associates",
+        "Industry":"Retail",
+        "Petitions (2024-25 Est.)":7930,
+        "Approval %":0.98
+    },
+    {
+        "Rank":11,
+        "Company Name":"Amazon Web Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":7439,
+        "Approval %":0.96
+    },
+    {
+        "Rank":12,
+        "Company Name":"Jpmorgan Chase &",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":7019,
+        "Approval %":0.98
+    },
+    {
+        "Rank":13,
+        "Company Name":"Deloitte",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":6971,
+        "Approval %":0.96
+    },
+    {
+        "Rank":14,
+        "Company Name":"HCL",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":6865,
+        "Approval %":0.96
+    },
+    {
+        "Rank":15,
+        "Company Name":"IBM",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":6692,
+        "Approval %":0.95
+    },
+    {
+        "Rank":16,
+        "Company Name":"Intel",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":6522,
+        "Approval %":0.95
+    },
+    {
+        "Rank":17,
+        "Company Name":"Accenture",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":6178,
+        "Approval %":0.97
+    },
+    {
+        "Rank":18,
+        "Company Name":"Capgemini",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":5743,
+        "Approval %":0.98
+    },
+    {
+        "Rank":19,
+        "Company Name":"Ltimindtree",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":5509,
+        "Approval %":0.99
+    },
+    {
+        "Rank":20,
+        "Company Name":"Tesla",
+        "Industry":"Manufacturing\/Auto",
+        "Petitions (2024-25 Est.)":5055,
+        "Approval %":0.97
+    },
+    {
+        "Rank":21,
+        "Company Name":"Amazon Development Center U.s.",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":4734,
+        "Approval %":0.96
+    },
+    {
+        "Rank":22,
+        "Company Name":"Wipro",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":4512,
+        "Approval %":0.96
+    },
+    {
+        "Rank":23,
+        "Company Name":"Salesforce",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":4194,
+        "Approval %":0.95
+    },
+    {
+        "Rank":24,
+        "Company Name":"Compunnel Software Group",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":3898,
+        "Approval %":0.98
+    },
+    {
+        "Rank":25,
+        "Company Name":"Qualcomm Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":3786,
+        "Approval %":0.97
+    },
+    {
+        "Rank":26,
+        "Company Name":"Mphasis",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":3274,
+        "Approval %":0.99
+    },
+    {
+        "Rank":27,
+        "Company Name":"NVIDIA",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":3244,
+        "Approval %":0.96
+    },
+    {
+        "Rank":28,
+        "Company Name":"Meta",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":3054,
+        "Approval %":0.99
+    },
+    {
+        "Rank":29,
+        "Company Name":"Deloitte & Touche",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":2854,
+        "Approval %":0.99
+    },
+    {
+        "Rank":30,
+        "Company Name":"Bytedance",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":2497,
+        "Approval %":0.96
+    },
+    {
+        "Rank":31,
+        "Company Name":"Cisco",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":2485,
+        "Approval %":0.96
+    },
+    {
+        "Rank":32,
+        "Company Name":"Goldman Sachs &",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":2480,
+        "Approval %":0.97
+    },
+    {
+        "Rank":33,
+        "Company Name":"Tech Mahindra (americas)",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":2473,
+        "Approval %":0.98
+    },
+    {
+        "Rank":34,
+        "Company Name":"Adobe",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":2370,
+        "Approval %":0.97
+    },
+    {
+        "Rank":35,
+        "Company Name":"Citibank, N.a.",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":2238,
+        "Approval %":0.97
+    },
+    {
+        "Rank":36,
+        "Company Name":"Fidelity Technology Group",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":2170,
+        "Approval %":0.95
+    },
+    {
+        "Rank":37,
+        "Company Name":"Oracle America",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":2105,
+        "Approval %":0.96
+    },
+    {
+        "Rank":38,
+        "Company Name":"Paypal",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":2073,
+        "Approval %":0.95
+    },
+    {
+        "Rank":39,
+        "Company Name":"LinkedIn",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":2016,
+        "Approval %":0.95
+    },
+    {
+        "Rank":40,
+        "Company Name":"Pricewaterhousecoopers Advisory Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1982,
+        "Approval %":0.97
+    },
+    {
+        "Rank":41,
+        "Company Name":"Amazon Data Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1935,
+        "Approval %":0.96
+    },
+    {
+        "Rank":42,
+        "Company Name":"Grandison Management",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1931,
+        "Approval %":0.95
+    },
+    {
+        "Rank":43,
+        "Company Name":"Ford",
+        "Industry":"Manufacturing\/Auto",
+        "Petitions (2024-25 Est.)":1797,
+        "Approval %":0.97
+    },
+    {
+        "Rank":44,
+        "Company Name":"Servicenow",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1788,
+        "Approval %":0.95
+    },
+    {
+        "Rank":45,
+        "Company Name":"Deloitte Tax",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":1702,
+        "Approval %":0.95
+    },
+    {
+        "Rank":46,
+        "Company Name":"Uber Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1696,
+        "Approval %":0.99
+    },
+    {
+        "Rank":47,
+        "Company Name":"Cummins",
+        "Industry":"Manufacturing\/Auto",
+        "Petitions (2024-25 Est.)":1672,
+        "Approval %":0.96
+    },
+    {
+        "Rank":48,
+        "Company Name":"Ust Global",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1671,
+        "Approval %":0.98
+    },
+    {
+        "Rank":49,
+        "Company Name":"Fidelity Technology Group, LLC D\/b\/a Fidelity Investments",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1670,
+        "Approval %":0.95
+    },
+    {
+        "Rank":50,
+        "Company Name":"Advanced Micro Devices",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1602,
+        "Approval %":0.97
+    },
+    {
+        "Rank":51,
+        "Company Name":"Tiktok",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1585,
+        "Approval %":0.96
+    },
+    {
+        "Rank":52,
+        "Company Name":"Randstad Digital",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1567,
+        "Approval %":0.96
+    },
+    {
+        "Rank":53,
+        "Company Name":"General Motors",
+        "Industry":"Manufacturing\/Auto",
+        "Petitions (2024-25 Est.)":1538,
+        "Approval %":0.98
+    },
+    {
+        "Rank":54,
+        "Company Name":"L&t Technology Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1535,
+        "Approval %":0.95
+    },
+    {
+        "Rank":55,
+        "Company Name":"Cgi Technologies and Solutions",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1530,
+        "Approval %":0.95
+    },
+    {
+        "Rank":56,
+        "Company Name":"Ebay",
+        "Industry":"Retail",
+        "Petitions (2024-25 Est.)":1448,
+        "Approval %":0.96
+    },
+    {
+        "Rank":57,
+        "Company Name":"Kforce",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1443,
+        "Approval %":0.96
+    },
+    {
+        "Rank":58,
+        "Company Name":"Morgan Stanley Services Group",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":1350,
+        "Approval %":0.96
+    },
+    {
+        "Rank":59,
+        "Company Name":"U.s. Bank National Association",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":1345,
+        "Approval %":0.96
+    },
+    {
+        "Rank":60,
+        "Company Name":"American Express Travel Related Services Company",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1335,
+        "Approval %":0.98
+    },
+    {
+        "Rank":61,
+        "Company Name":"Bank of America N.a.",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":1334,
+        "Approval %":0.96
+    },
+    {
+        "Rank":62,
+        "Company Name":"Hexaware Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1330,
+        "Approval %":0.96
+    },
+    {
+        "Rank":63,
+        "Company Name":"Federal Express",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1308,
+        "Approval %":0.95
+    },
+    {
+        "Rank":64,
+        "Company Name":"Virtusa",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1295,
+        "Approval %":0.95
+    },
+    {
+        "Rank":65,
+        "Company Name":"University of Michigan",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":1283,
+        "Approval %":0.96
+    },
+    {
+        "Rank":66,
+        "Company Name":"Comcast Cable Communications",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1281,
+        "Approval %":0.95
+    },
+    {
+        "Rank":67,
+        "Company Name":"Mckinsey & Company, Inc. United States",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":1260,
+        "Approval %":0.96
+    },
+    {
+        "Rank":68,
+        "Company Name":"Rivian Automotive",
+        "Industry":"Manufacturing\/Auto",
+        "Petitions (2024-25 Est.)":1256,
+        "Approval %":0.97
+    },
+    {
+        "Rank":69,
+        "Company Name":"Intuit",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1235,
+        "Approval %":0.99
+    },
+    {
+        "Rank":70,
+        "Company Name":"Barclays Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1229,
+        "Approval %":0.97
+    },
+    {
+        "Rank":71,
+        "Company Name":"Capital One Services",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":1219,
+        "Approval %":0.99
+    },
+    {
+        "Rank":72,
+        "Company Name":"Lucid Usa",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1199,
+        "Approval %":0.96
+    },
+    {
+        "Rank":73,
+        "Company Name":"Optum Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1199,
+        "Approval %":0.99
+    },
+    {
+        "Rank":74,
+        "Company Name":"Goldman Sachs Services",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":1185,
+        "Approval %":0.97
+    },
+    {
+        "Rank":75,
+        "Company Name":"AT&T Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1174,
+        "Approval %":0.98
+    },
+    {
+        "Rank":76,
+        "Company Name":"Wells Fargo Bank, N.a.",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":1161,
+        "Approval %":0.95
+    },
+    {
+        "Rank":77,
+        "Company Name":"HPE",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1119,
+        "Approval %":0.95
+    },
+    {
+        "Rank":78,
+        "Company Name":"Elevance Health",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":1103,
+        "Approval %":0.99
+    },
+    {
+        "Rank":79,
+        "Company Name":"Visa Technology & Operations",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":1082,
+        "Approval %":0.98
+    },
+    {
+        "Rank":80,
+        "Company Name":"Fis Management Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1080,
+        "Approval %":0.96
+    },
+    {
+        "Rank":81,
+        "Company Name":"Doordash",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1079,
+        "Approval %":0.99
+    },
+    {
+        "Rank":82,
+        "Company Name":"Palo Alto Networks",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1066,
+        "Approval %":0.99
+    },
+    {
+        "Rank":83,
+        "Company Name":"Mayo Clinic",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":1058,
+        "Approval %":0.95
+    },
+    {
+        "Rank":84,
+        "Company Name":"Charles Schwab & Company",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1050,
+        "Approval %":0.95
+    },
+    {
+        "Rank":85,
+        "Company Name":"T-mobile Usa",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":1015,
+        "Approval %":0.99
+    },
+    {
+        "Rank":86,
+        "Company Name":"Micron Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":996,
+        "Approval %":0.96
+    },
+    {
+        "Rank":87,
+        "Company Name":"The Leland Stanford, Jr University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":992,
+        "Approval %":0.95
+    },
+    {
+        "Rank":88,
+        "Company Name":"Johns Hopkins University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":982,
+        "Approval %":0.96
+    },
+    {
+        "Rank":89,
+        "Company Name":"Expedia",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":928,
+        "Approval %":0.98
+    },
+    {
+        "Rank":90,
+        "Company Name":"Dfs Corporate Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":912,
+        "Approval %":0.96
+    },
+    {
+        "Rank":91,
+        "Company Name":"Bloomberg L.p.",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":911,
+        "Approval %":0.96
+    },
+    {
+        "Rank":92,
+        "Company Name":"Amgen",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":910,
+        "Approval %":0.96
+    },
+    {
+        "Rank":93,
+        "Company Name":"Atos Syntel",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":906,
+        "Approval %":0.99
+    },
+    {
+        "Rank":94,
+        "Company Name":"Applied Materials",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":901,
+        "Approval %":0.95
+    },
+    {
+        "Rank":95,
+        "Company Name":"Fiserv Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":899,
+        "Approval %":0.99
+    },
+    {
+        "Rank":96,
+        "Company Name":"Mastech Digital Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":896,
+        "Approval %":0.95
+    },
+    {
+        "Rank":97,
+        "Company Name":"Blackrock Financial Management",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":892,
+        "Approval %":0.99
+    },
+    {
+        "Rank":98,
+        "Company Name":"Infinite Computer Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":892,
+        "Approval %":0.99
+    },
+    {
+        "Rank":99,
+        "Company Name":"Visa U.s.a.",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":892,
+        "Approval %":0.99
+    },
+    {
+        "Rank":100,
+        "Company Name":"Caremark",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":883,
+        "Approval %":0.98
+    },
+    {
+        "Rank":101,
+        "Company Name":"Washington University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":871,
+        "Approval %":0.97
+    },
+    {
+        "Rank":102,
+        "Company Name":"Trustees of the University of Pennsylvania",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":855,
+        "Approval %":0.95
+    },
+    {
+        "Rank":103,
+        "Company Name":"Mastercard Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":854,
+        "Approval %":0.96
+    },
+    {
+        "Rank":104,
+        "Company Name":"Persistent Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":853,
+        "Approval %":0.95
+    },
+    {
+        "Rank":105,
+        "Company Name":"KPMG",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":850,
+        "Approval %":0.98
+    },
+    {
+        "Rank":106,
+        "Company Name":"People Tech Group",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":845,
+        "Approval %":0.95
+    },
+    {
+        "Rank":107,
+        "Company Name":"Yale University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":843,
+        "Approval %":0.99
+    },
+    {
+        "Rank":108,
+        "Company Name":"Emory University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":829,
+        "Approval %":0.97
+    },
+    {
+        "Rank":109,
+        "Company Name":"Adp Technology Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":822,
+        "Approval %":0.99
+    },
+    {
+        "Rank":110,
+        "Company Name":"Asml Us",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":817,
+        "Approval %":0.96
+    },
+    {
+        "Rank":111,
+        "Company Name":"Citiustech",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":812,
+        "Approval %":0.95
+    },
+    {
+        "Rank":112,
+        "Company Name":"Columbia University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":808,
+        "Approval %":0.97
+    },
+    {
+        "Rank":113,
+        "Company Name":"Skilltune Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":806,
+        "Approval %":0.99
+    },
+    {
+        "Rank":114,
+        "Company Name":"Innova Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":804,
+        "Approval %":0.98
+    },
+    {
+        "Rank":115,
+        "Company Name":"The Mathworks",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":786,
+        "Approval %":0.96
+    },
+    {
+        "Rank":116,
+        "Company Name":"Snap",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":772,
+        "Approval %":0.99
+    },
+    {
+        "Rank":117,
+        "Company Name":"Western Digital Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":772,
+        "Approval %":0.95
+    },
+    {
+        "Rank":118,
+        "Company Name":"Boston Consulting Group",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":759,
+        "Approval %":0.98
+    },
+    {
+        "Rank":119,
+        "Company Name":"Htc Global Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":757,
+        "Approval %":0.95
+    },
+    {
+        "Rank":120,
+        "Company Name":"Eli Lilly and",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":754,
+        "Approval %":0.99
+    },
+    {
+        "Rank":121,
+        "Company Name":"Snowflake",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":749,
+        "Approval %":0.95
+    },
+    {
+        "Rank":122,
+        "Company Name":"Cvs Pharmacy",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":743,
+        "Approval %":0.97
+    },
+    {
+        "Rank":123,
+        "Company Name":"University of Wisconsin System",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":740,
+        "Approval %":0.95
+    },
+    {
+        "Rank":124,
+        "Company Name":"Exlservice.com",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":739,
+        "Approval %":0.97
+    },
+    {
+        "Rank":125,
+        "Company Name":"The University of Alabama at Birmingham",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":735,
+        "Approval %":0.97
+    },
+    {
+        "Rank":126,
+        "Company Name":"Medtronic",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":733,
+        "Approval %":0.95
+    },
+    {
+        "Rank":127,
+        "Company Name":"Aetna Resources",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":725,
+        "Approval %":0.99
+    },
+    {
+        "Rank":128,
+        "Company Name":"University of California, San Francisco",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":723,
+        "Approval %":0.96
+    },
+    {
+        "Rank":129,
+        "Company Name":"Databricks",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":721,
+        "Approval %":0.97
+    },
+    {
+        "Rank":130,
+        "Company Name":"SAP America",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":720,
+        "Approval %":0.98
+    },
+    {
+        "Rank":131,
+        "Company Name":"Infocons",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":717,
+        "Approval %":0.97
+    },
+    {
+        "Rank":132,
+        "Company Name":"University of Florida",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":715,
+        "Approval %":0.99
+    },
+    {
+        "Rank":133,
+        "Company Name":"Lowe's Companies",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":714,
+        "Approval %":0.98
+    },
+    {
+        "Rank":134,
+        "Company Name":"Workday",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":710,
+        "Approval %":0.99
+    },
+    {
+        "Rank":135,
+        "Company Name":"Pinterest",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":695,
+        "Approval %":0.95
+    },
+    {
+        "Rank":136,
+        "Company Name":"State Street Bank and Trust",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":689,
+        "Approval %":0.97
+    },
+    {
+        "Rank":137,
+        "Company Name":"UBS Business Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":687,
+        "Approval %":0.98
+    },
+    {
+        "Rank":138,
+        "Company Name":"Populus Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":684,
+        "Approval %":0.99
+    },
+    {
+        "Rank":139,
+        "Company Name":"Synechron",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":682,
+        "Approval %":0.99
+    },
+    {
+        "Rank":140,
+        "Company Name":"St. Jude Children's Research Hospital",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":677,
+        "Approval %":0.99
+    },
+    {
+        "Rank":141,
+        "Company Name":"Cigna-evernorth Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":664,
+        "Approval %":0.97
+    },
+    {
+        "Rank":142,
+        "Company Name":"Caterpillar",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":660,
+        "Approval %":0.99
+    },
+    {
+        "Rank":143,
+        "Company Name":"Ntt Data Americas",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":654,
+        "Approval %":0.98
+    },
+    {
+        "Rank":144,
+        "Company Name":"Dallas Independent School District",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":653,
+        "Approval %":0.97
+    },
+    {
+        "Rank":145,
+        "Company Name":"Harvard University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":650,
+        "Approval %":0.95
+    },
+    {
+        "Rank":146,
+        "Company Name":"Netflix",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":648,
+        "Approval %":0.96
+    },
+    {
+        "Rank":147,
+        "Company Name":"Northwestern University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":644,
+        "Approval %":0.95
+    },
+    {
+        "Rank":148,
+        "Company Name":"Coforge",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":640,
+        "Approval %":0.95
+    },
+    {
+        "Rank":149,
+        "Company Name":"Eficens Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":640,
+        "Approval %":0.97
+    },
+    {
+        "Rank":150,
+        "Company Name":"American Airlines",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":637,
+        "Approval %":0.99
+    },
+    {
+        "Rank":151,
+        "Company Name":"Globallogic",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":631,
+        "Approval %":0.99
+    },
+    {
+        "Rank":152,
+        "Company Name":"The University of Iowa",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":631,
+        "Approval %":0.97
+    },
+    {
+        "Rank":153,
+        "Company Name":"Capital One, National Association",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":628,
+        "Approval %":0.96
+    },
+    {
+        "Rank":154,
+        "Company Name":"The Ohio State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":626,
+        "Approval %":0.97
+    },
+    {
+        "Rank":155,
+        "Company Name":"V-soft Consulting Group",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":623,
+        "Approval %":0.96
+    },
+    {
+        "Rank":156,
+        "Company Name":"Ut Southwestern Medical Center",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":616,
+        "Approval %":0.96
+    },
+    {
+        "Rank":157,
+        "Company Name":"Purdue University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":614,
+        "Approval %":0.99
+    },
+    {
+        "Rank":158,
+        "Company Name":"The University of Chicago",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":612,
+        "Approval %":0.95
+    },
+    {
+        "Rank":159,
+        "Company Name":"Texas A&m University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":609,
+        "Approval %":0.95
+    },
+    {
+        "Rank":160,
+        "Company Name":"Zs Associates",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":609,
+        "Approval %":0.95
+    },
+    {
+        "Rank":161,
+        "Company Name":"University of Pittsburgh",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":608,
+        "Approval %":0.97
+    },
+    {
+        "Rank":162,
+        "Company Name":"Charter Communications",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":596,
+        "Approval %":0.96
+    },
+    {
+        "Rank":163,
+        "Company Name":"Icahn School of Medicine at Mount Sinai",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":590,
+        "Approval %":0.96
+    },
+    {
+        "Rank":164,
+        "Company Name":"University of California, San Diego",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":587,
+        "Approval %":0.95
+    },
+    {
+        "Rank":165,
+        "Company Name":"Stripe",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":582,
+        "Approval %":0.98
+    },
+    {
+        "Rank":166,
+        "Company Name":"Charter Communications",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":579,
+        "Approval %":0.99
+    },
+    {
+        "Rank":167,
+        "Company Name":"Intuitive Surgical Operations",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":576,
+        "Approval %":0.97
+    },
+    {
+        "Rank":168,
+        "Company Name":"Memorial Sloan Kettering Cancer Center",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":574,
+        "Approval %":0.99
+    },
+    {
+        "Rank":169,
+        "Company Name":"National Institutes of Health, Hhs",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":569,
+        "Approval %":0.98
+    },
+    {
+        "Rank":170,
+        "Company Name":"Goldman Sachs Bank",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":569,
+        "Approval %":0.97
+    },
+    {
+        "Rank":171,
+        "Company Name":"Nike",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":565,
+        "Approval %":0.96
+    },
+    {
+        "Rank":172,
+        "Company Name":"Home Depot Management",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":564,
+        "Approval %":0.96
+    },
+    {
+        "Rank":173,
+        "Company Name":"Ut-battelle, LLC (oak Ridge National Laboratory)",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":564,
+        "Approval %":0.96
+    },
+    {
+        "Rank":174,
+        "Company Name":"Kla",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":563,
+        "Approval %":0.98
+    },
+    {
+        "Rank":175,
+        "Company Name":"Atlassian Us",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":553,
+        "Approval %":0.99
+    },
+    {
+        "Rank":176,
+        "Company Name":"Truist Bank",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":552,
+        "Approval %":0.98
+    },
+    {
+        "Rank":177,
+        "Company Name":"Fca",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":551,
+        "Approval %":0.95
+    },
+    {
+        "Rank":178,
+        "Company Name":"HCL Global Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":550,
+        "Approval %":0.99
+    },
+    {
+        "Rank":179,
+        "Company Name":"University of Minnesota",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":545,
+        "Approval %":0.97
+    },
+    {
+        "Rank":180,
+        "Company Name":"Equifax",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":542,
+        "Approval %":0.97
+    },
+    {
+        "Rank":181,
+        "Company Name":"Concentrix Cvg Customer Management Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":539,
+        "Approval %":0.99
+    },
+    {
+        "Rank":182,
+        "Company Name":"Verizon Data Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":537,
+        "Approval %":0.98
+    },
+    {
+        "Rank":183,
+        "Company Name":"Block",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":534,
+        "Approval %":0.97
+    },
+    {
+        "Rank":184,
+        "Company Name":"The Vanguard Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":533,
+        "Approval %":0.96
+    },
+    {
+        "Rank":185,
+        "Company Name":"Yahoo Holdings",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":533,
+        "Approval %":0.99
+    },
+    {
+        "Rank":186,
+        "Company Name":"The Boston Consulting Group",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":533,
+        "Approval %":0.95
+    },
+    {
+        "Rank":187,
+        "Company Name":"The University of Texas M.d. Anderson Cancer Center",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":530,
+        "Approval %":0.98
+    },
+    {
+        "Rank":188,
+        "Company Name":"Cadence Design Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":529,
+        "Approval %":0.99
+    },
+    {
+        "Rank":189,
+        "Company Name":"General Hospital",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":527,
+        "Approval %":0.95
+    },
+    {
+        "Rank":190,
+        "Company Name":"Nokia of",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":524,
+        "Approval %":0.97
+    },
+    {
+        "Rank":191,
+        "Company Name":"Bristol-myers Squibb",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":521,
+        "Approval %":0.99
+    },
+    {
+        "Rank":192,
+        "Company Name":"University of Illinois",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":521,
+        "Approval %":0.96
+    },
+    {
+        "Rank":193,
+        "Company Name":"The Trustees of Princeton University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":519,
+        "Approval %":0.97
+    },
+    {
+        "Rank":194,
+        "Company Name":"Gilead Sciences",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":519,
+        "Approval %":0.97
+    },
+    {
+        "Rank":195,
+        "Company Name":"Humana",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":515,
+        "Approval %":0.96
+    },
+    {
+        "Rank":196,
+        "Company Name":"Massachusetts Institute of Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":515,
+        "Approval %":0.97
+    },
+    {
+        "Rank":197,
+        "Company Name":"Duke University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":511,
+        "Approval %":0.98
+    },
+    {
+        "Rank":198,
+        "Company Name":"Bofa Securities",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":509,
+        "Approval %":0.99
+    },
+    {
+        "Rank":199,
+        "Company Name":"Juniper Networks",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":507,
+        "Approval %":0.99
+    },
+    {
+        "Rank":200,
+        "Company Name":"The University of Virginia",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":500,
+        "Approval %":0.99
+    },
+    {
+        "Rank":201,
+        "Company Name":"The University of Texas at Austin",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":496,
+        "Approval %":0.97
+    },
+    {
+        "Rank":202,
+        "Company Name":"University of California, Los Angeles",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":495,
+        "Approval %":0.97
+    },
+    {
+        "Rank":203,
+        "Company Name":"Wsp",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":492,
+        "Approval %":0.95
+    },
+    {
+        "Rank":204,
+        "Company Name":"Intercontinental Exchange Holdings",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":490,
+        "Approval %":0.97
+    },
+    {
+        "Rank":205,
+        "Company Name":"The Curators of the University of Missouri",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":487,
+        "Approval %":0.98
+    },
+    {
+        "Rank":206,
+        "Company Name":"The University of Southern California",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":486,
+        "Approval %":0.96
+    },
+    {
+        "Rank":207,
+        "Company Name":"Dell USA L.p.",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":484,
+        "Approval %":0.95
+    },
+    {
+        "Rank":208,
+        "Company Name":"Lam Research",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":484,
+        "Approval %":0.97
+    },
+    {
+        "Rank":209,
+        "Company Name":"Autodesk",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":483,
+        "Approval %":0.95
+    },
+    {
+        "Rank":210,
+        "Company Name":"Db Global Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":483,
+        "Approval %":0.97
+    },
+    {
+        "Rank":211,
+        "Company Name":"Slalom",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":481,
+        "Approval %":0.96
+    },
+    {
+        "Rank":212,
+        "Company Name":"Emc",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":481,
+        "Approval %":0.95
+    },
+    {
+        "Rank":213,
+        "Company Name":"Erp Analysts",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":481,
+        "Approval %":0.99
+    },
+    {
+        "Rank":214,
+        "Company Name":"Milwaukee Board of School Directors",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":478,
+        "Approval %":0.96
+    },
+    {
+        "Rank":215,
+        "Company Name":"Baylor College of Medicine",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":477,
+        "Approval %":0.96
+    },
+    {
+        "Rank":216,
+        "Company Name":"Persistent Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":475,
+        "Approval %":0.98
+    },
+    {
+        "Rank":217,
+        "Company Name":"University of Washington",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":474,
+        "Approval %":0.96
+    },
+    {
+        "Rank":218,
+        "Company Name":"Nyu Grossman School of Medicine",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":471,
+        "Approval %":0.97
+    },
+    {
+        "Rank":219,
+        "Company Name":"Docusign",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":471,
+        "Approval %":0.95
+    },
+    {
+        "Rank":220,
+        "Company Name":"Abbvie",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":469,
+        "Approval %":0.97
+    },
+    {
+        "Rank":221,
+        "Company Name":"Genpact",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":465,
+        "Approval %":0.99
+    },
+    {
+        "Rank":222,
+        "Company Name":"Arm",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":464,
+        "Approval %":0.97
+    },
+    {
+        "Rank":223,
+        "Company Name":"VMware",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":462,
+        "Approval %":0.95
+    },
+    {
+        "Rank":224,
+        "Company Name":"Iqvia",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":459,
+        "Approval %":0.97
+    },
+    {
+        "Rank":225,
+        "Company Name":"Siemens Industry Software",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":458,
+        "Approval %":0.97
+    },
+    {
+        "Rank":226,
+        "Company Name":"Analog Devices",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":451,
+        "Approval %":0.95
+    },
+    {
+        "Rank":227,
+        "Company Name":"Target Enterprise",
+        "Industry":"Retail",
+        "Petitions (2024-25 Est.)":450,
+        "Approval %":0.95
+    },
+    {
+        "Rank":228,
+        "Company Name":"Safeway",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":447,
+        "Approval %":0.98
+    },
+    {
+        "Rank":229,
+        "Company Name":"Natsoft",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":446,
+        "Approval %":0.99
+    },
+    {
+        "Rank":230,
+        "Company Name":"Wayfair",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":440,
+        "Approval %":0.95
+    },
+    {
+        "Rank":231,
+        "Company Name":"Nagarro",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":436,
+        "Approval %":0.99
+    },
+    {
+        "Rank":232,
+        "Company Name":"Insight Global",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":434,
+        "Approval %":0.96
+    },
+    {
+        "Rank":233,
+        "Company Name":"Mpg Operations",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":433,
+        "Approval %":0.97
+    },
+    {
+        "Rank":234,
+        "Company Name":"Synechron",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":429,
+        "Approval %":0.96
+    },
+    {
+        "Rank":235,
+        "Company Name":"Marvell Semiconductor",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":428,
+        "Approval %":0.98
+    },
+    {
+        "Rank":236,
+        "Company Name":"Nutanix",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":425,
+        "Approval %":0.95
+    },
+    {
+        "Rank":237,
+        "Company Name":"Waymo",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":425,
+        "Approval %":0.95
+    },
+    {
+        "Rank":238,
+        "Company Name":"The Pennsylvania State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":424,
+        "Approval %":0.97
+    },
+    {
+        "Rank":239,
+        "Company Name":"Akamai Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":422,
+        "Approval %":0.97
+    },
+    {
+        "Rank":240,
+        "Company Name":"University of California, Davis",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":422,
+        "Approval %":0.98
+    },
+    {
+        "Rank":241,
+        "Company Name":"Slk",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":422,
+        "Approval %":0.96
+    },
+    {
+        "Rank":242,
+        "Company Name":"Rutgers, the State University of New Jersey",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":420,
+        "Approval %":0.98
+    },
+    {
+        "Rank":243,
+        "Company Name":"United Services Automobile Association",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":418,
+        "Approval %":0.96
+    },
+    {
+        "Rank":244,
+        "Company Name":"Xilinx",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":418,
+        "Approval %":0.95
+    },
+    {
+        "Rank":245,
+        "Company Name":"University of California, Berkeley",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":417,
+        "Approval %":0.97
+    },
+    {
+        "Rank":246,
+        "Company Name":"Nordstrom",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":416,
+        "Approval %":0.95
+    },
+    {
+        "Rank":247,
+        "Company Name":"Chewy",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":413,
+        "Approval %":0.96
+    },
+    {
+        "Rank":248,
+        "Company Name":"Tiktok U.s. Data Security",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":413,
+        "Approval %":0.96
+    },
+    {
+        "Rank":249,
+        "Company Name":"Credit Suisse Securities (usa)",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":409,
+        "Approval %":0.96
+    },
+    {
+        "Rank":250,
+        "Company Name":"Airbnb",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":405,
+        "Approval %":0.98
+    },
+    {
+        "Rank":251,
+        "Company Name":"University of Utah",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":405,
+        "Approval %":0.99
+    },
+    {
+        "Rank":252,
+        "Company Name":"PlayStation",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":403,
+        "Approval %":0.96
+    },
+    {
+        "Rank":253,
+        "Company Name":"Photon Infotech",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":402,
+        "Approval %":0.95
+    },
+    {
+        "Rank":254,
+        "Company Name":"Brigham and Women's Hospital",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":400,
+        "Approval %":0.99
+    },
+    {
+        "Rank":255,
+        "Company Name":"Brillio",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":399,
+        "Approval %":0.95
+    },
+    {
+        "Rank":256,
+        "Company Name":"Msr Technology Group",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":396,
+        "Approval %":0.98
+    },
+    {
+        "Rank":257,
+        "Company Name":"Birlasoft",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":395,
+        "Approval %":0.97
+    },
+    {
+        "Rank":258,
+        "Company Name":"Relx",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":395,
+        "Approval %":0.98
+    },
+    {
+        "Rank":259,
+        "Company Name":"Synopsys",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":394,
+        "Approval %":0.98
+    },
+    {
+        "Rank":260,
+        "Company Name":"Tiger Analytics",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":393,
+        "Approval %":0.99
+    },
+    {
+        "Rank":261,
+        "Company Name":"Deutsche Bank Securities",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":391,
+        "Approval %":0.97
+    },
+    {
+        "Rank":262,
+        "Company Name":"Mastercard International",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":390,
+        "Approval %":0.99
+    },
+    {
+        "Rank":263,
+        "Company Name":"The Northern Trust",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":389,
+        "Approval %":0.95
+    },
+    {
+        "Rank":264,
+        "Company Name":"HP",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":389,
+        "Approval %":0.99
+    },
+    {
+        "Rank":265,
+        "Company Name":"Indeed",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":387,
+        "Approval %":0.99
+    },
+    {
+        "Rank":266,
+        "Company Name":"Government Employees Insurance Company (geico)",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":385,
+        "Approval %":0.98
+    },
+    {
+        "Rank":267,
+        "Company Name":"Twilio",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":384,
+        "Approval %":0.96
+    },
+    {
+        "Rank":268,
+        "Company Name":"Zscaler",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":383,
+        "Approval %":0.96
+    },
+    {
+        "Rank":269,
+        "Company Name":"System Soft Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":379,
+        "Approval %":0.97
+    },
+    {
+        "Rank":270,
+        "Company Name":"Michigan State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":379,
+        "Approval %":0.96
+    },
+    {
+        "Rank":271,
+        "Company Name":"Intellectt",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":379,
+        "Approval %":0.96
+    },
+    {
+        "Rank":272,
+        "Company Name":"Texas Instruments",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":378,
+        "Approval %":0.96
+    },
+    {
+        "Rank":273,
+        "Company Name":"Cornell University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":377,
+        "Approval %":0.98
+    },
+    {
+        "Rank":274,
+        "Company Name":"Virginia Polytechnic Institute & State University",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":377,
+        "Approval %":0.97
+    },
+    {
+        "Rank":275,
+        "Company Name":"Amazon Advertising",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":375,
+        "Approval %":0.95
+    },
+    {
+        "Rank":276,
+        "Company Name":"Children's Hospital",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":375,
+        "Approval %":0.98
+    },
+    {
+        "Rank":277,
+        "Company Name":"Db USA Core",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":374,
+        "Approval %":0.98
+    },
+    {
+        "Rank":278,
+        "Company Name":"Nxp Usa",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":374,
+        "Approval %":0.95
+    },
+    {
+        "Rank":279,
+        "Company Name":"Cbre",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":373,
+        "Approval %":0.99
+    },
+    {
+        "Rank":280,
+        "Company Name":"Dell Products L.p.",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":371,
+        "Approval %":0.96
+    },
+    {
+        "Rank":281,
+        "Company Name":"Starbucks Coffee",
+        "Industry":"Retail",
+        "Petitions (2024-25 Est.)":370,
+        "Approval %":0.98
+    },
+    {
+        "Rank":282,
+        "Company Name":"Cloud Big Data Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":369,
+        "Approval %":0.98
+    },
+    {
+        "Rank":283,
+        "Company Name":"Weill Cornell Medical College",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":368,
+        "Approval %":0.95
+    },
+    {
+        "Rank":284,
+        "Company Name":"Artifint Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":368,
+        "Approval %":0.96
+    },
+    {
+        "Rank":285,
+        "Company Name":"The Devereux Foundation",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":367,
+        "Approval %":0.99
+    },
+    {
+        "Rank":286,
+        "Company Name":"North Carolina State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":367,
+        "Approval %":0.96
+    },
+    {
+        "Rank":287,
+        "Company Name":"Ascendion, Inc. (formerly Known As Collabera, Inc.)",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":364,
+        "Approval %":0.98
+    },
+    {
+        "Rank":288,
+        "Company Name":"Robinhood Markets",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":364,
+        "Approval %":0.96
+    },
+    {
+        "Rank":289,
+        "Company Name":"Battelle Memorial Institute",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":363,
+        "Approval %":0.96
+    },
+    {
+        "Rank":290,
+        "Company Name":"University of Miami",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":363,
+        "Approval %":0.99
+    },
+    {
+        "Rank":291,
+        "Company Name":"Henry Ford Health System",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":361,
+        "Approval %":0.97
+    },
+    {
+        "Rank":292,
+        "Company Name":"Epitec",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":361,
+        "Approval %":0.95
+    },
+    {
+        "Rank":293,
+        "Company Name":"Roblox",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":361,
+        "Approval %":0.99
+    },
+    {
+        "Rank":294,
+        "Company Name":"Georgia Institute of Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":360,
+        "Approval %":0.97
+    },
+    {
+        "Rank":295,
+        "Company Name":"University of Rochester",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":360,
+        "Approval %":0.97
+    },
+    {
+        "Rank":296,
+        "Company Name":"The Children's Hospital of Philadelphia",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":360,
+        "Approval %":0.95
+    },
+    {
+        "Rank":297,
+        "Company Name":"Arizona State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":359,
+        "Approval %":0.98
+    },
+    {
+        "Rank":298,
+        "Company Name":"Samsung Electronics America",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":359,
+        "Approval %":0.99
+    },
+    {
+        "Rank":299,
+        "Company Name":"Satin Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":359,
+        "Approval %":0.97
+    },
+    {
+        "Rank":300,
+        "Company Name":"Pure Storage",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":359,
+        "Approval %":0.95
+    },
+    {
+        "Rank":301,
+        "Company Name":"Health Care Service",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":358,
+        "Approval %":0.98
+    },
+    {
+        "Rank":302,
+        "Company Name":"Maplebear",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":358,
+        "Approval %":0.96
+    },
+    {
+        "Rank":303,
+        "Company Name":"Machine Learning Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":357,
+        "Approval %":0.96
+    },
+    {
+        "Rank":304,
+        "Company Name":"Indiana University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":355,
+        "Approval %":0.96
+    },
+    {
+        "Rank":3053,
+        "Company Name":"d Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":355,
+        "Approval %":0.96
+    },
+    {
+        "Rank":306,
+        "Company Name":"Netapp",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":351,
+        "Approval %":0.96
+    },
+    {
+        "Rank":307,
+        "Company Name":"Savannah Chatham County Public School System",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":351,
+        "Approval %":0.96
+    },
+    {
+        "Rank":308,
+        "Company Name":"Arista Networks",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":348,
+        "Approval %":0.96
+    },
+    {
+        "Rank":309,
+        "Company Name":"Tech Mahindra (americas)",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":344,
+        "Approval %":0.98
+    },
+    {
+        "Rank":310,
+        "Company Name":"Dana-farber Cancer Institute",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":342,
+        "Approval %":0.99
+    },
+    {
+        "Rank":311,
+        "Company Name":"University of Colorado Denver",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":342,
+        "Approval %":0.99
+    },
+    {
+        "Rank":312,
+        "Company Name":"Denken Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":341,
+        "Approval %":0.95
+    },
+    {
+        "Rank":313,
+        "Company Name":"Medline Industries, Lp.",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":341,
+        "Approval %":0.96
+    },
+    {
+        "Rank":314,
+        "Company Name":"PwC",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":341,
+        "Approval %":0.96
+    },
+    {
+        "Rank":315,
+        "Company Name":"Rockwell Collins",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":341,
+        "Approval %":0.95
+    },
+    {
+        "Rank":316,
+        "Company Name":"Best Buy Co.",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":340,
+        "Approval %":0.97
+    },
+    {
+        "Rank":317,
+        "Company Name":"Fortinet",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":339,
+        "Approval %":0.95
+    },
+    {
+        "Rank":318,
+        "Company Name":"Zensar Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":339,
+        "Approval %":0.97
+    },
+    {
+        "Rank":319,
+        "Company Name":"Northwell Health",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":339,
+        "Approval %":0.95
+    },
+    {
+        "Rank":320,
+        "Company Name":"Vcloud Technology Group",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":339,
+        "Approval %":0.96
+    },
+    {
+        "Rank":321,
+        "Company Name":"Board of Regents of the University of Nebraska",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":337,
+        "Approval %":0.96
+    },
+    {
+        "Rank":322,
+        "Company Name":"Open Avenues Foundation",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":336,
+        "Approval %":0.96
+    },
+    {
+        "Rank":323,
+        "Company Name":"University of Colorado",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":335,
+        "Approval %":0.95
+    },
+    {
+        "Rank":324,
+        "Company Name":"Deere &",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":334,
+        "Approval %":0.95
+    },
+    {
+        "Rank":325,
+        "Company Name":"Vertex Pharmaceuticals",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":334,
+        "Approval %":0.96
+    },
+    {
+        "Rank":326,
+        "Company Name":"Zillow",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":333,
+        "Approval %":0.96
+    },
+    {
+        "Rank":327,
+        "Company Name":"Social Finance",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":332,
+        "Approval %":0.96
+    },
+    {
+        "Rank":328,
+        "Company Name":"Gp Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":331,
+        "Approval %":0.97
+    },
+    {
+        "Rank":329,
+        "Company Name":"Intraedge",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":331,
+        "Approval %":0.97
+    },
+    {
+        "Rank":330,
+        "Company Name":"Navy Federal Credit Union",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":330,
+        "Approval %":0.99
+    },
+    {
+        "Rank":331,
+        "Company Name":"Iowa State University of Science and Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":329,
+        "Approval %":0.98
+    },
+    {
+        "Rank":332,
+        "Company Name":"Cvs Shared Services Resources",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":329,
+        "Approval %":0.97
+    },
+    {
+        "Rank":333,
+        "Company Name":"Blockchain Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":329,
+        "Approval %":0.97
+    },
+    {
+        "Rank":334,
+        "Company Name":"Citizens Financial Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":328,
+        "Approval %":0.97
+    },
+    {
+        "Rank":335,
+        "Company Name":"Management Health Systems",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":328,
+        "Approval %":0.95
+    },
+    {
+        "Rank":336,
+        "Company Name":"Asm",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":327,
+        "Approval %":0.97
+    },
+    {
+        "Rank":337,
+        "Company Name":"Diaspark",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":327,
+        "Approval %":0.98
+    },
+    {
+        "Rank":338,
+        "Company Name":"Ntt Data Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":325,
+        "Approval %":0.95
+    },
+    {
+        "Rank":339,
+        "Company Name":"Automation Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":324,
+        "Approval %":0.99
+    },
+    {
+        "Rank":340,
+        "Company Name":"Avco Consulting",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":323,
+        "Approval %":0.98
+    },
+    {
+        "Rank":341,
+        "Company Name":"Staples",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":323,
+        "Approval %":0.99
+    },
+    {
+        "Rank":342,
+        "Company Name":"Moody's Analytics",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":321,
+        "Approval %":0.95
+    },
+    {
+        "Rank":343,
+        "Company Name":"PWC US Tax",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":317,
+        "Approval %":0.99
+    },
+    {
+        "Rank":344,
+        "Company Name":"The Bank of New York Mellon",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":317,
+        "Approval %":0.98
+    },
+    {
+        "Rank":345,
+        "Company Name":"Montefiore Medical Center",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":317,
+        "Approval %":0.98
+    },
+    {
+        "Rank":346,
+        "Company Name":"Merck Sharp & Dohme",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":316,
+        "Approval %":0.97
+    },
+    {
+        "Rank":347,
+        "Company Name":"Collaborate Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":316,
+        "Approval %":0.97
+    },
+    {
+        "Rank":348,
+        "Company Name":"Mongodb",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":315,
+        "Approval %":0.96
+    },
+    {
+        "Rank":349,
+        "Company Name":"Valuemomentum",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":315,
+        "Approval %":0.99
+    },
+    {
+        "Rank":350,
+        "Company Name":"Trustees of Boston University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":314,
+        "Approval %":0.98
+    },
+    {
+        "Rank":351,
+        "Company Name":"Lawrence Berkeley National Laboratory",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":314,
+        "Approval %":0.96
+    },
+    {
+        "Rank":352,
+        "Company Name":"Red Hat",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":313,
+        "Approval %":0.96
+    },
+    {
+        "Rank":353,
+        "Company Name":"Citigroup Global Markets",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":312,
+        "Approval %":0.99
+    },
+    {
+        "Rank":354,
+        "Company Name":"Paycom Payroll",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":311,
+        "Approval %":0.95
+    },
+    {
+        "Rank":355,
+        "Company Name":"University of North Carolina at Chapel Hill",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":310,
+        "Approval %":0.98
+    },
+    {
+        "Rank":356,
+        "Company Name":"Discover Products",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":310,
+        "Approval %":0.98
+    },
+    {
+        "Rank":357,
+        "Company Name":"Birlasoft Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":310,
+        "Approval %":0.99
+    },
+    {
+        "Rank":358,
+        "Company Name":"Strategic Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":310,
+        "Approval %":0.97
+    },
+    {
+        "Rank":359,
+        "Company Name":"Government Employee Insurance Company (geico)",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":310,
+        "Approval %":0.97
+    },
+    {
+        "Rank":360,
+        "Company Name":"Federal Home Loan Mortgage",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":309,
+        "Approval %":0.98
+    },
+    {
+        "Rank":361,
+        "Company Name":"Ericsson",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":309,
+        "Approval %":0.95
+    },
+    {
+        "Rank":362,
+        "Company Name":"Fedex Dataworks",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":309,
+        "Approval %":0.96
+    },
+    {
+        "Rank":363,
+        "Company Name":"Delta Air Lines",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":308,
+        "Approval %":0.97
+    },
+    {
+        "Rank":364,
+        "Company Name":"Vastek",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":308,
+        "Approval %":0.99
+    },
+    {
+        "Rank":365,
+        "Company Name":"Zoox",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":307,
+        "Approval %":0.95
+    },
+    {
+        "Rank":366,
+        "Company Name":"Schlumberger Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":306,
+        "Approval %":0.99
+    },
+    {
+        "Rank":367,
+        "Company Name":"Becton, Dickinson and",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":305,
+        "Approval %":0.96
+    },
+    {
+        "Rank":368,
+        "Company Name":"Zoox",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":304,
+        "Approval %":0.96
+    },
+    {
+        "Rank":369,
+        "Company Name":"Ice Mortgage Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":304,
+        "Approval %":0.95
+    },
+    {
+        "Rank":370,
+        "Company Name":"Oregon State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":302,
+        "Approval %":0.97
+    },
+    {
+        "Rank":371,
+        "Company Name":"Qualcomm Atheros",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":300,
+        "Approval %":0.95
+    },
+    {
+        "Rank":372,
+        "Company Name":"Denver Public Schools District 1",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":300,
+        "Approval %":0.98
+    },
+    {
+        "Rank":373,
+        "Company Name":"New York University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":299,
+        "Approval %":0.97
+    },
+    {
+        "Rank":374,
+        "Company Name":"University of Kentucky",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":296,
+        "Approval %":0.95
+    },
+    {
+        "Rank":375,
+        "Company Name":"Avant Healthcare Professionals, Llc.",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":295,
+        "Approval %":0.96
+    },
+    {
+        "Rank":376,
+        "Company Name":"Microchip Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":295,
+        "Approval %":0.98
+    },
+    {
+        "Rank":377,
+        "Company Name":"Thermo Fisher Scientific",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":294,
+        "Approval %":0.95
+    },
+    {
+        "Rank":378,
+        "Company Name":"Jefferies",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":292,
+        "Approval %":0.95
+    },
+    {
+        "Rank":379,
+        "Company Name":"Cigniti Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":292,
+        "Approval %":0.99
+    },
+    {
+        "Rank":380,
+        "Company Name":"Epam Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":292,
+        "Approval %":0.99
+    },
+    {
+        "Rank":381,
+        "Company Name":"The University of Texas Health Science Center at Houston",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":292,
+        "Approval %":0.97
+    },
+    {
+        "Rank":382,
+        "Company Name":"District of Columbia Public Schools",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":292,
+        "Approval %":0.99
+    },
+    {
+        "Rank":383,
+        "Company Name":"Pyramid Consulting",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":291,
+        "Approval %":0.96
+    },
+    {
+        "Rank":384,
+        "Company Name":"Spotify Usa",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":290,
+        "Approval %":0.97
+    },
+    {
+        "Rank":385,
+        "Company Name":"Sage IT",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":290,
+        "Approval %":0.98
+    },
+    {
+        "Rank":386,
+        "Company Name":"The Prudential Insurance Company of",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":289,
+        "Approval %":0.98
+    },
+    {
+        "Rank":387,
+        "Company Name":"Northwestern Mutual Life Insurance",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":289,
+        "Approval %":0.98
+    },
+    {
+        "Rank":388,
+        "Company Name":"Indiana University Indianapolis",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":288,
+        "Approval %":0.99
+    },
+    {
+        "Rank":389,
+        "Company Name":"Skyworks Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":287,
+        "Approval %":0.97
+    },
+    {
+        "Rank":390,
+        "Company Name":"Regeneron Pharmaceuticals",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":286,
+        "Approval %":0.95
+    },
+    {
+        "Rank":391,
+        "Company Name":"Perficient",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":284,
+        "Approval %":0.98
+    },
+    {
+        "Rank":392,
+        "Company Name":"Takeda Development Center Americas",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":284,
+        "Approval %":0.99
+    },
+    {
+        "Rank":393,
+        "Company Name":"Roku",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":282,
+        "Approval %":0.95
+    },
+    {
+        "Rank":394,
+        "Company Name":"Marlabs",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":282,
+        "Approval %":0.98
+    },
+    {
+        "Rank":395,
+        "Company Name":"Sirius Xm Radio",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":282,
+        "Approval %":0.99
+    },
+    {
+        "Rank":396,
+        "Company Name":"Coinbase",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":281,
+        "Approval %":0.97
+    },
+    {
+        "Rank":397,
+        "Company Name":"Hubspot",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":280,
+        "Approval %":0.97
+    },
+    {
+        "Rank":398,
+        "Company Name":"Transunion",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":280,
+        "Approval %":0.99
+    },
+    {
+        "Rank":399,
+        "Company Name":"Robotic Process Automation",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":280,
+        "Approval %":0.95
+    },
+    {
+        "Rank":400,
+        "Company Name":"Rivian and Vw Group Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":279,
+        "Approval %":0.97
+    },
+    {
+        "Rank":401,
+        "Company Name":"Black & Veatch",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":278,
+        "Approval %":0.98
+    },
+    {
+        "Rank":402,
+        "Company Name":"Machine Intelligence Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":277,
+        "Approval %":0.96
+    },
+    {
+        "Rank":403,
+        "Company Name":"Dropbox",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":276,
+        "Approval %":0.96
+    },
+    {
+        "Rank":404,
+        "Company Name":"Motorola Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":276,
+        "Approval %":0.98
+    },
+    {
+        "Rank":405,
+        "Company Name":"Costco",
+        "Industry":"Retail",
+        "Petitions (2024-25 Est.)":276,
+        "Approval %":0.97
+    },
+    {
+        "Rank":406,
+        "Company Name":"Cotiviti",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":276,
+        "Approval %":0.99
+    },
+    {
+        "Rank":407,
+        "Company Name":"United Wholesale Mortgage",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":275,
+        "Approval %":0.95
+    },
+    {
+        "Rank":408,
+        "Company Name":"Genentech",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":275,
+        "Approval %":0.99
+    },
+    {
+        "Rank":409,
+        "Company Name":"Triad National Security",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":274,
+        "Approval %":0.96
+    },
+    {
+        "Rank":410,
+        "Company Name":"Aptiv",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":272,
+        "Approval %":0.97
+    },
+    {
+        "Rank":411,
+        "Company Name":"Mckesson",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":272,
+        "Approval %":0.98
+    },
+    {
+        "Rank":412,
+        "Company Name":"Metlife Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":271,
+        "Approval %":0.99
+    },
+    {
+        "Rank":413,
+        "Company Name":"Equinix",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":270,
+        "Approval %":0.95
+    },
+    {
+        "Rank":414,
+        "Company Name":"Godaddy.com",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":270,
+        "Approval %":0.97
+    },
+    {
+        "Rank":415,
+        "Company Name":"Oregon Health & Science University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":270,
+        "Approval %":0.95
+    },
+    {
+        "Rank":416,
+        "Company Name":"University of Arkansas for Medical Sciences",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":269,
+        "Approval %":0.97
+    },
+    {
+        "Rank":417,
+        "Company Name":"Howard Hughes Medical Institute",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":269,
+        "Approval %":0.95
+    },
+    {
+        "Rank":418,
+        "Company Name":"California Institute of Technology",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":269,
+        "Approval %":0.97
+    },
+    {
+        "Rank":419,
+        "Company Name":"Ochsner Clinic Foundation",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":269,
+        "Approval %":0.96
+    },
+    {
+        "Rank":420,
+        "Company Name":"Hughes Network Systems",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":269,
+        "Approval %":0.96
+    },
+    {
+        "Rank":421,
+        "Company Name":"Centene Management Company",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":268,
+        "Approval %":0.95
+    },
+    {
+        "Rank":422,
+        "Company Name":"Tavant Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":268,
+        "Approval %":0.96
+    },
+    {
+        "Rank":423,
+        "Company Name":"Tek Leaders",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":267,
+        "Approval %":0.96
+    },
+    {
+        "Rank":424,
+        "Company Name":"F5",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":266,
+        "Approval %":0.97
+    },
+    {
+        "Rank":425,
+        "Company Name":"Vista Applied Solutions Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":266,
+        "Approval %":0.95
+    },
+    {
+        "Rank":426,
+        "Company Name":"Upmc Medical Education",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":266,
+        "Approval %":0.95
+    },
+    {
+        "Rank":427,
+        "Company Name":"Decision Six",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":266,
+        "Approval %":0.95
+    },
+    {
+        "Rank":428,
+        "Company Name":"Audible",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":265,
+        "Approval %":0.97
+    },
+    {
+        "Rank":429,
+        "Company Name":"Carnegie Mellon University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":265,
+        "Approval %":0.99
+    },
+    {
+        "Rank":430,
+        "Company Name":"Hitachi Digital Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":265,
+        "Approval %":0.98
+    },
+    {
+        "Rank":431,
+        "Company Name":"Cox Automotive Corporate Services",
+        "Industry":"Manufacturing\/Auto",
+        "Petitions (2024-25 Est.)":263,
+        "Approval %":0.95
+    },
+    {
+        "Rank":432,
+        "Company Name":"Illumina",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":261,
+        "Approval %":0.98
+    },
+    {
+        "Rank":433,
+        "Company Name":"Cybersource",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":260,
+        "Approval %":0.95
+    },
+    {
+        "Rank":434,
+        "Company Name":"Epsilon Data Management",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":259,
+        "Approval %":0.97
+    },
+    {
+        "Rank":435,
+        "Company Name":"Sumitomo Mitsui Banking",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":259,
+        "Approval %":0.97
+    },
+    {
+        "Rank":436,
+        "Company Name":"Kpit Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":259,
+        "Approval %":0.95
+    },
+    {
+        "Rank":437,
+        "Company Name":"J.b. Hunt Transport",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":258,
+        "Approval %":0.99
+    },
+    {
+        "Rank":438,
+        "Company Name":"The Florida State University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":258,
+        "Approval %":0.98
+    },
+    {
+        "Rank":439,
+        "Company Name":"Modernatx",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":257,
+        "Approval %":0.98
+    },
+    {
+        "Rank":440,
+        "Company Name":"Ppd Development, L.p.",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":257,
+        "Approval %":0.98
+    },
+    {
+        "Rank":441,
+        "Company Name":"Schneider Electric Usa",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":256,
+        "Approval %":0.98
+    },
+    {
+        "Rank":442,
+        "Company Name":"Experis Us",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":256,
+        "Approval %":0.98
+    },
+    {
+        "Rank":443,
+        "Company Name":"Insurance Services Office",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":254,
+        "Approval %":0.95
+    },
+    {
+        "Rank":444,
+        "Company Name":"Cloudflare",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":254,
+        "Approval %":0.95
+    },
+    {
+        "Rank":445,
+        "Company Name":"Chime Financial",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":253,
+        "Approval %":0.98
+    },
+    {
+        "Rank":446,
+        "Company Name":"University of Maryland Baltimore",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":253,
+        "Approval %":0.97
+    },
+    {
+        "Rank":447,
+        "Company Name":"Akkodis",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":253,
+        "Approval %":0.96
+    },
+    {
+        "Rank":448,
+        "Company Name":"New York Life Insurance",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":253,
+        "Approval %":0.95
+    },
+    {
+        "Rank":449,
+        "Company Name":"Okta",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":252,
+        "Approval %":0.97
+    },
+    {
+        "Rank":450,
+        "Company Name":"First Citizens Bank and Trust",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":252,
+        "Approval %":0.98
+    },
+    {
+        "Rank":451,
+        "Company Name":"Axtria",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":251,
+        "Approval %":0.98
+    },
+    {
+        "Rank":452,
+        "Company Name":"Eaton",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":251,
+        "Approval %":0.97
+    },
+    {
+        "Rank":453,
+        "Company Name":"Texas Tech University",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":251,
+        "Approval %":0.98
+    },
+    {
+        "Rank":454,
+        "Company Name":"Eclinicalworks",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":251,
+        "Approval %":0.95
+    },
+    {
+        "Rank":455,
+        "Company Name":"Harmony Public Schools",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":250,
+        "Approval %":0.95
+    },
+    {
+        "Rank":456,
+        "Company Name":"Tredence",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":249,
+        "Approval %":0.97
+    },
+    {
+        "Rank":457,
+        "Company Name":"Jacobs Engineering Group",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":249,
+        "Approval %":0.96
+    },
+    {
+        "Rank":458,
+        "Company Name":"Northeastern University",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":249,
+        "Approval %":0.97
+    },
+    {
+        "Rank":459,
+        "Company Name":"PWC US Consulting",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":248,
+        "Approval %":0.97
+    },
+    {
+        "Rank":460,
+        "Company Name":"Aecom Technical Services",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":248,
+        "Approval %":0.97
+    },
+    {
+        "Rank":461,
+        "Company Name":"Citadel Americas Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":248,
+        "Approval %":0.95
+    },
+    {
+        "Rank":462,
+        "Company Name":"Rubrik",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":247,
+        "Approval %":0.99
+    },
+    {
+        "Rank":463,
+        "Company Name":"Confluent",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":246,
+        "Approval %":0.99
+    },
+    {
+        "Rank":464,
+        "Company Name":"Semiconductor Components Industries",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":245,
+        "Approval %":0.98
+    },
+    {
+        "Rank":465,
+        "Company Name":"Citadel Securities Americas Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":245,
+        "Approval %":0.99
+    },
+    {
+        "Rank":466,
+        "Company Name":"University of Maryland College Park",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":245,
+        "Approval %":0.97
+    },
+    {
+        "Rank":467,
+        "Company Name":"Moody's Investors Service",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":244,
+        "Approval %":0.98
+    },
+    {
+        "Rank":468,
+        "Company Name":"Archer Daniels Midland",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":244,
+        "Approval %":0.98
+    },
+    {
+        "Rank":469,
+        "Company Name":"Zifo Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":243,
+        "Approval %":0.96
+    },
+    {
+        "Rank":470,
+        "Company Name":"Virtusa Consulting Services Pvt.",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":243,
+        "Approval %":0.96
+    },
+    {
+        "Rank":471,
+        "Company Name":"Robert Bosch",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":243,
+        "Approval %":0.95
+    },
+    {
+        "Rank":472,
+        "Company Name":"Incedo",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":242,
+        "Approval %":0.97
+    },
+    {
+        "Rank":473,
+        "Company Name":"Cincinnati Children's Hospital Medical Center",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":242,
+        "Approval %":0.98
+    },
+    {
+        "Rank":474,
+        "Company Name":"Cruise",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":242,
+        "Approval %":0.97
+    },
+    {
+        "Rank":475,
+        "Company Name":"Miracle Software Systems",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":242,
+        "Approval %":0.99
+    },
+    {
+        "Rank":476,
+        "Company Name":"Core Tech Construction",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":241,
+        "Approval %":0.97
+    },
+    {
+        "Rank":477,
+        "Company Name":"Coupang Global",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":241,
+        "Approval %":0.96
+    },
+    {
+        "Rank":478,
+        "Company Name":"The University of Tennessee",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":241,
+        "Approval %":0.97
+    },
+    {
+        "Rank":479,
+        "Company Name":"Stantec Consulting Services",
+        "Industry":"Professional Services",
+        "Petitions (2024-25 Est.)":240,
+        "Approval %":0.97
+    },
+    {
+        "Rank":480,
+        "Company Name":"Lyft",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":240,
+        "Approval %":0.95
+    },
+    {
+        "Rank":481,
+        "Company Name":"Eteam",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":240,
+        "Approval %":0.98
+    },
+    {
+        "Rank":482,
+        "Company Name":"Collabera",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":240,
+        "Approval %":0.96
+    },
+    {
+        "Rank":483,
+        "Company Name":"Cleveland Clinic Foundation",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":239,
+        "Approval %":0.98
+    },
+    {
+        "Rank":484,
+        "Company Name":"Informatica",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":239,
+        "Approval %":0.95
+    },
+    {
+        "Rank":485,
+        "Company Name":"Samsung Semiconductor",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":239,
+        "Approval %":0.95
+    },
+    {
+        "Rank":486,
+        "Company Name":"Iris Software",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":239,
+        "Approval %":0.96
+    },
+    {
+        "Rank":487,
+        "Company Name":"Cardinal Health",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":238,
+        "Approval %":0.97
+    },
+    {
+        "Rank":488,
+        "Company Name":"Astrazeneca Pharmaceuticals",
+        "Industry":"Healthcare\/Biotech",
+        "Petitions (2024-25 Est.)":238,
+        "Approval %":0.99
+    },
+    {
+        "Rank":489,
+        "Company Name":"Dish Wireless",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":238,
+        "Approval %":0.97
+    },
+    {
+        "Rank":490,
+        "Company Name":"Hdr Engineering",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":236,
+        "Approval %":0.98
+    },
+    {
+        "Rank":491,
+        "Company Name":"Quadrant Technologies",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":236,
+        "Approval %":0.97
+    },
+    {
+        "Rank":492,
+        "Company Name":"Artech",
+        "Industry":"Technology",
+        "Petitions (2024-25 Est.)":236,
+        "Approval %":0.98
+    },
+    {
+        "Rank":493,
+        "Company Name":"Brookhaven National Laboratory",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":232,
+        "Approval %":0.98
+    },
+    {
+        "Rank":494,
+        "Company Name":"M&t Bank",
+        "Industry":"Finance",
+        "Petitions (2024-25 Est.)":232,
+        "Approval %":0.95
+    },
+    {
+        "Rank":495,
+        "Company Name":"Credit Karma",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":232,
+        "Approval %":0.99
+    },
+    {
+        "Rank":496,
+        "Company Name":"Broadridge Financial Solutions",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":231,
+        "Approval %":0.98
+    },
+    {
+        "Rank":497,
+        "Company Name":"University of Pittsburgh Physicians",
+        "Industry":"Education\/Research",
+        "Petitions (2024-25 Est.)":231,
+        "Approval %":0.96
+    },
+    {
+        "Rank":498,
+        "Company Name":"Rbc Capital Markets",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":230,
+        "Approval %":0.96
+    },
+    {
+        "Rank":499,
+        "Company Name":"Hca Management Services",
+        "Industry":"Business Services\/Other",
+        "Petitions (2024-25 Est.)":230,
+        "Approval %":0.97
+    }
+]
