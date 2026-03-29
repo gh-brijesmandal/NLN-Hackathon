@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe, Search, TrendingUp, AlertCircle } from 'lucide-react';
+import { Globe, Search, TrendingUp, AlertCircle, ExternalLink } from 'lucide-react';
 import { fetchH1BCompanies } from '../lib/jobs';
 import type { H1BCompany } from '../types';
 
@@ -20,10 +20,8 @@ export function H1BExplorer() {
   const industries = ['all', ...Array.from(new Set(results.map(r => r.industry ?? 'Other'))).sort()];
   const filtered = industry === 'all' ? results : results.filter(r => (r.industry ?? 'Other') === industry);
 
-  const approvalRate = (c: H1BCompany) => {
-    const total = c.approvals + c.denials;
-    return total > 0 ? Math.round((c.approvals / total) * 100) : 0;
-  };
+  const getCompanyLink = (company: H1BCompany) => company.website
+    ?? `https://www.google.com/search?q=${encodeURIComponent(`${company.employer} official website`)}`;
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto animate-fade-in">
@@ -32,7 +30,7 @@ export function H1BExplorer() {
           <Globe size={20} className="text-accent" />
           <h1 className="font-display font-semibold text-2xl sm:text-3xl text-text-primary">H1B Sponsor Explorer</h1>
         </div>
-        <p className="font-mono text-xs text-text-muted">Companies with strong history of sponsoring H1B visas. Data sourced from USCIS public records (2023).</p>
+        <p className="font-mono text-xs text-text-muted">Companies with strong history of sponsoring H1B visas. Data sourced from 2024-25 estimated petition filings.</p>
       </div>
 
       {/* Info banner */}
@@ -99,22 +97,29 @@ export function H1BExplorer() {
             <>
               <div className="font-mono text-xs text-text-muted mb-3">{filtered.length} companies found</div>
               {/* Table Header */}
-              <div className="hidden sm:grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 px-5 py-2.5 border-b border-border mb-1">
-                {['Company', 'Industry', 'Approvals', 'Approval Rate', 'Year'].map(h => (
+              <div className="hidden sm:grid grid-cols-[2.2fr_1.4fr_1fr_0.8fr] gap-4 px-5 py-2.5 border-b border-border mb-1">
+                {['Company', 'Industry', 'Approvals', 'Year'].map(h => (
                   <div key={h} className="font-mono text-xs text-text-muted">{h}</div>
                 ))}
               </div>
               <div className="bg-surface border border-border rounded-2xl overflow-hidden divide-y divide-border">
                 {filtered.map((company, i) => {
-                  const rate = approvalRate(company);
-                  const rateColor = rate >= 95 ? 'text-accent' : rate >= 85 ? 'text-warn' : 'text-danger';
                   return (
-                    <div key={i} className="grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-2 sm:gap-4 px-5 py-3.5 hover:bg-white/[0.02] transition-colors">
+                    <a
+                      key={`${company.employer}-${company.year}-${i}`}
+                      href={getCompanyLink(company)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="grid grid-cols-1 sm:grid-cols-[2.2fr_1.4fr_1fr_0.8fr] gap-2 sm:gap-4 px-5 py-3.5 hover:bg-white/[0.02] transition-colors cursor-pointer"
+                    >
                       <div className="flex items-center gap-3">
                         <div className="size-8 rounded-lg bg-accent/10 flex items-center justify-center font-mono text-xs text-accent font-medium flex-shrink-0">
                           {company.employer.slice(0, 2).toUpperCase()}
                         </div>
-                        <span className="font-medium text-text-primary text-sm">{company.employer}</span>
+                        <span className="font-medium text-text-primary text-sm inline-flex items-center gap-1.5">
+                          {company.employer}
+                          <ExternalLink size={12} className="text-text-muted" />
+                        </span>
                       </div>
                       <div className="font-mono text-xs text-text-muted sm:self-center">
                         <span className="sm:hidden text-text-muted">Industry: </span>{company.industry ?? 'N/A'}
@@ -123,11 +128,8 @@ export function H1BExplorer() {
                         <TrendingUp size={12} className="text-accent" />
                         <span className="font-mono text-xs text-text-secondary">{company.approvals.toLocaleString()}</span>
                       </div>
-                      <div className={`font-mono text-xs font-semibold sm:self-center ${rateColor}`}>
-                        {rate}%
-                      </div>
                       <div className="font-mono text-xs text-text-muted sm:self-center">{company.year}</div>
-                    </div>
+                    </a>
                   );
                 })}
               </div>
