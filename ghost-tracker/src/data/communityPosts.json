@@ -1,0 +1,272 @@
+[
+    {
+        "id": "eng_001",
+        "title": "Summer 2026 Software Engineering Internship Guide",
+        "url": "https://careers.tech/internship-guide-2026",
+        "score": 452,
+        "numComments": 87,
+        "selftext": "A breakdown of when to apply for junior year internships and interview prep.",
+        "createdAt": "2026-01-15T09:00:00Z"
+    },
+    {
+        "id": "eng_002",
+        "title": "Transitioning from Intern to Full-Time: Tips",
+        "url": "https://careers.tech/intern-to-full-time",
+        "score": 310,
+        "numComments": 42,
+        "selftext": "Advice on securing a return offer and the differences in permanent responsibilities.",
+        "createdAt": "2026-02-10T14:30:00Z"
+    },
+    {
+        "id": "eng_003",
+        "title": "Engineering Career Guidance: Choosing a Path",
+        "url": "https://careers.tech/specializations",
+        "score": 890,
+        "numComments": 156,
+        "selftext": "Comparing Backend, Frontend, and DevOps for new grads in 2026.",
+        "createdAt": "2026-03-01T11:15:00Z"
+    },
+    {
+        "id": "eng_004",
+        "title": "Top 10 Firms Hiring Full-Time Engineers",
+        "url": "https://careers.tech/hiring-trends",
+        "score": 215,
+        "numComments": 33,
+        "selftext": "A list of companies with active entry-level engineering positions.",
+        "createdAt": "2026-03-20T08:45:00Z"
+    },
+    {
+        "id": "eng_005",
+        "title": "How to Ace the System Design Interview",
+        "url": "https://careers.tech/system-design-tips",
+        "score": 1205,
+        "numComments": 210,
+        "selftext": "Essential concepts for mid-level full-time engineering roles.",
+        "createdAt": "2026-03-25T10:00:00Z"
+    },
+    {
+        "id": "eng_006",
+        "title": "Negotiating Your First Full-Time Salary",
+        "url": "https://careers.tech/salary-negotiation",
+        "score": 670,
+        "numComments": 95,
+        "selftext": "Don't leave money on the table. Here is how to handle the HR call.",
+        "createdAt": "2026-03-28T16:20:00Z"
+    },
+    {
+        "id": "eng_007",
+        "title": "Mechanical Engineering Internships in Aerospace",
+        "url": "https://careers.tech/aero-interns",
+        "score": 145,
+        "numComments": 28,
+        "selftext": "Specific advice for students looking to enter the space industry.",
+        "createdAt": "2026-02-15T12:00:00Z"
+    },
+    {
+        "id": "eng_008",
+        "title": "Remote vs. Hybrid: Engineering Career Outlook",
+        "url": "https://careers.tech/remote-trends-2026",
+        "score": 540,
+        "numComments": 112,
+        "selftext": "Discussion on how full-time engineering culture is shifting this year.",
+        "createdAt": "2026-03-05T09:30:00Z"
+    },
+    {
+        "id": "eng_009",
+        "title": "Civil Engineering Certifications for New Grads",
+        "url": "https://careers.tech/civil-certs",
+        "score": 98,
+        "numComments": 15,
+        "selftext": "Which exams to take right after graduation to boost your career.",
+        "createdAt": "2026-01-20T14:00:00Z"
+    },
+    {
+        "id": "eng_010",
+        "title": "The Rise of AI Engineering Roles",
+        "url": "https://careers.tech/ai-career-path",
+        "score": 1560,
+        "numComments": 340,
+        "selftext": "Why every software intern should learn LLM orchestration in 2026.",
+        "createdAt": "2026-03-12T13:45:00Z"
+    },
+    {
+        "id": "eng_011",
+        "title": "What to Pack for Your First On-Site Internship",
+        "url": "https://careers.tech/intern-packing-list",
+        "score": 55,
+        "numComments": 12,
+        "selftext": "Practical items and dress code tips for engineering interns.",
+        "createdAt": "2026-02-22T08:15:00Z"
+    },
+    {
+        "id": "eng_012",
+        "title": "Handling Burnout as a Full-Time Engineer",
+        "url": "https://careers.tech/eng-burnout",
+        "score": 820,
+        "numComments": 180,
+        "selftext": "Guidance on maintaining work-life balance in high-pressure tech roles.",
+        "createdAt": "2026-03-18T17:00:00Z"
+    },
+    {
+        "id": "eng_013",
+        "title": "Electrical Engineering: Full-Time Power Grid Roles",
+        "url": "https://careers.tech/ee-power-jobs",
+        "score": 112,
+        "numComments": 22,
+        "selftext": "Exploring stable career paths in the energy sector.",
+        "createdAt": "2026-03-02T11:00:00Z"
+    },
+    {
+        "id": "eng_014",
+        "title": "Portfolio Projects for Data Engineering Interns",
+        "url": "https://careers.tech/data-eng-projects",
+        "score": 390,
+        "numComments": 55,
+        "selftext": "Three project ideas that use real-world datasets and cloud tools.",
+        "createdAt": "2026-01-30T10:30:00Z"
+    },
+    {
+        "id": "eng_015",
+        "title": "Is a Masters in Engineering Worth It in 2026?",
+        "url": "https://careers.tech/masters-vs-experience",
+        "score": 730,
+        "numComments": 245,
+        "selftext": "Debating the ROI of further education vs starting full-time work.",
+        "createdAt": "2026-02-28T15:00:00Z"
+    },
+    {
+        "id": "eng_016",
+        "title": "Networking Tips for Introverted Engineers",
+        "url": "https://careers.tech/introvert-networking",
+        "score": 415,
+        "numComments": 68,
+        "selftext": "How to build career connections without feeling drained.",
+        "createdAt": "2026-03-10T09:00:00Z"
+    },
+    {
+        "id": "eng_017",
+        "title": "Chemical Engineering Internships in Pharma",
+        "url": "https://careers.tech/chem-eng-pharma",
+        "score": 88,
+        "numComments": 19,
+        "selftext": "Key companies and skills needed for the pharmaceutical industry.",
+        "createdAt": "2026-02-05T13:20:00Z"
+    },
+    {
+        "id": "eng_018",
+        "title": "The 'Hidden' Job Market for Engineers",
+        "url": "https://careers.tech/hidden-jobs",
+        "score": 502,
+        "numComments": 77,
+        "selftext": "How to find full-time roles that aren't posted on major job boards.",
+        "createdAt": "2026-03-22T14:10:00Z"
+    },
+    {
+        "id": "eng_019",
+        "title": "Hardware Engineering: Internship Interview Prep",
+        "url": "https://careers.tech/hardware-interviews",
+        "score": 130,
+        "numComments": 31,
+        "selftext": "Common circuit analysis questions and coding for embedded systems.",
+        "createdAt": "2026-01-12T11:45:00Z"
+    },
+    {
+        "id": "eng_020",
+        "title": "Switching Engineering Disciplines Mid-Career",
+        "url": "https://careers.tech/switching-fields",
+        "score": 290,
+        "numComments": 54,
+        "selftext": "Guidance on moving from Mechanical to Software Engineering.",
+        "createdAt": "2026-03-14T10:00:00Z"
+    },
+    {
+        "id": "eng_021",
+        "title": "Best Cities for Full-Time Engineering Jobs",
+        "url": "https://careers.tech/best-cities-2026",
+        "score": 610,
+        "numComments": 140,
+        "selftext": "Ranking cities by cost of living vs. average engineering salary.",
+        "createdAt": "2026-03-08T08:30:00Z"
+    },
+    {
+        "id": "eng_022",
+        "title": "Soft Skills Every Engineering Intern Needs",
+        "url": "https://careers.tech/intern-soft-skills",
+        "score": 175,
+        "numComments": 40,
+        "selftext": "Why communication is just as important as your code or designs.",
+        "createdAt": "2026-02-18T16:45:00Z"
+    },
+    {
+        "id": "eng_023",
+        "title": "Full-Stack Engineering: 2026 Tech Stack Guide",
+        "url": "https://careers.tech/fullstack-2026",
+        "score": 840,
+        "numComments": 122,
+        "selftext": "The libraries and frameworks that are dominating full-time hiring.",
+        "createdAt": "2026-03-24T12:00:00Z"
+    },
+    {
+        "id": "eng_024",
+        "title": "Finding Internships at Small Startups",
+        "url": "https://careers.tech/startup-internships",
+        "score": 220,
+        "numComments": 48,
+        "selftext": "The pros and cons of interning at a seed-stage company.",
+        "createdAt": "2026-01-25T09:15:00Z"
+    },
+    {
+        "id": "eng_025",
+        "title": "Engineering Leadership: Path to Management",
+        "url": "https://careers.tech/eng-management",
+        "score": 315,
+        "numComments": 59,
+        "selftext": "Guidance for full-time engineers looking to move into Lead or Manager roles.",
+        "createdAt": "2026-03-19T15:30:00Z"
+    },
+    {
+        "id": "eng_026",
+        "title": "QA Engineering: An Underrated Career Entry",
+        "url": "https://careers.tech/qa-career-path",
+        "score": 195,
+        "numComments": 44,
+        "selftext": "How QA roles can lead to robust full-time development careers.",
+        "createdAt": "2026-02-12T10:20:00Z"
+    },
+    {
+        "id": "eng_027",
+        "title": "Relocation Packages for Engineering Grads",
+        "url": "https://careers.tech/relocation-tips",
+        "score": 480,
+        "numComments": 92,
+        "selftext": "What to ask for when a company wants you to move for a full-time job.",
+        "createdAt": "2026-03-26T13:00:00Z"
+    },
+    {
+        "id": "eng_028",
+        "title": "Bio-Medical Engineering: Internship Outlook",
+        "url": "https://careers.tech/biomed-interns",
+        "score": 110,
+        "numComments": 21,
+        "selftext": "Current state of the medical device industry for student applicants.",
+        "createdAt": "2026-01-08T11:00:00Z"
+    },
+    {
+        "id": "eng_029",
+        "title": "Cybersecurity Engineering Career Roadmap",
+        "url": "https://careers.tech/cyber-roadmap",
+        "score": 960,
+        "numComments": 135,
+        "selftext": "Certifications and skills needed for a full-time role in 2026.",
+        "createdAt": "2026-03-27T09:45:00Z"
+    },
+    {
+        "id": "eng_030",
+        "title": "Final Tips for the 2026 Graduating Class",
+        "url": "https://careers.tech/2026-grads",
+        "score": 1100,
+        "numComments": 200,
+        "selftext": "Final career guidance as you wrap up your degree and head to full-time work.",
+        "createdAt": "2026-03-29T01:00:00Z"
+    }
+]
