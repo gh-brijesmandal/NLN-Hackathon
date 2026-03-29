@@ -1,14 +1,15 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Application, ScanState } from '../types';
-import { fetchApplications } from '../lib/gmail';
+import { fetchApplications, ensureClaudeScannerReady } from '../lib/gmail.ts';
 import { MOCK_APPLICATIONS } from '../lib/mockData';
-import { saveApplications, loadApplications, saveLastScanned, loadLastScanned, loadGhostDays } from '../lib/storage';
+import { saveApplications, loadApplications, saveLastScanned, loadGhostDays } from '../lib/storage';
 
 export function useApplications() {
   const [applications, setApplications] = useState<Application[]>([]);
   const [scan, setScan] = useState<ScanState>({ isScanning: false, progress: 0, total: 0, currentLabel: '' });
   const [hasLoaded, setHasLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const scanInFlightRef = useRef(false);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -20,10 +21,15 @@ export function useApplications() {
   }, []);
 
   const scanInbox = useCallback(async (accessToken: string | null, isDemoMode: boolean) => {
+    if (scanInFlightRef.current) {
+      return;
+    }
+
+    scanInFlightRef.current = true;
     setScan({ isScanning: true, progress: 0, total: 3, currentLabel: 'Connecting…' });
     setError(null);
     try {
-      if (isDemoMode || !accessToken) {
+      if (isDemoMode) {
         setScan(s => ({ ...s, progress: 1, currentLabel: 'Searching for application emails…' }));
         await delay(800);
         setScan(s => ({ ...s, progress: 2, currentLabel: 'Analyzing responses…' }));
@@ -32,9 +38,17 @@ export function useApplications() {
         await delay(600);
         setApplications(MOCK_APPLICATIONS);
         saveApplications(MOCK_APPLICATIONS);
+        setError('Demo mode is active. Gmail and Claude are not called in demo mode. Sign in with Google to run real Claude parsing.');
+      } else if (!accessToken) {
+        await ensureClaudeScannerReady(true);
+        setError('No Google access token found. Sign out and sign in again, then re-scan to call Claude parsing.');
       } else {
+        await ensureClaudeScannerReady(true);
         setScan(s => ({ ...s, progress: 1, currentLabel: 'Searching for application emails…' }));
         const apps = await fetchApplications(accessToken);
+        if (apps.length === 0) {
+          setError('No application emails matched yet. Try re-scanning after checking recent inbox confirmations and Gmail permissions.');
+        }
         setScan(s => ({ ...s, progress: 2, currentLabel: 'Analyzing responses…' }));
         await delay(400);
         setScan(s => ({ ...s, progress: 3, currentLabel: 'Done!' }));
@@ -45,7 +59,9 @@ export function useApplications() {
       setHasLoaded(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to scan inbox');
+      setHasLoaded(true);
     } finally {
+      scanInFlightRef.current = false;
       setScan(s => ({ ...s, isScanning: false }));
     }
   }, []);
@@ -88,7 +104,6 @@ export function useApplications() {
     });
   }, []);
 
-  const ghostDays = loadGhostDays();
   const stats = {
     total: applications.length,
     active: applications.filter(a => ['applied', 'screening', 'interviewing'].includes(a.status)).length,

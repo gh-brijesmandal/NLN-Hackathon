@@ -7,9 +7,10 @@ import type { ScanState } from '../types';
 interface Props {
   onRefresh: () => void;
   scan: ScanState;
+  scanError?: string | null;
 }
 
-export function Layout({ onRefresh, scan }: Props) {
+export function Layout({ onRefresh, scan, scanError = null }: Props) {
   return (
     <div className="flex h-screen bg-bg overflow-hidden">
       {scan.isScanning && <ScanOverlay scan={scan} />}
@@ -19,6 +20,11 @@ export function Layout({ onRefresh, scan }: Props) {
       </div>
       {/* Main content */}
       <main className="flex-1 overflow-y-auto pb-20 md:pb-0">
+        {scanError && (
+          <div className="mx-4 mt-4 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-xs text-red-300 font-mono">
+            {scanError}
+          </div>
+        )}
         <Outlet />
       </main>
       {/* Mobile bottom nav */}

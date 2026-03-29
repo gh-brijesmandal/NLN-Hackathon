@@ -5,67 +5,45 @@ function getSettings(): AISettings | null {
   return loadAISettings();
 }
 
-async function callAI(systemPrompt: string, userPrompt: string): Promise<string> {
+function resolveAIConfig(): { apiKey: string; model: string } {
   const settings = getSettings();
-  if (!settings?.apiKey) throw new Error('No AI API key configured. Go to Settings → AI Model to add your key.');
+  const envAnthropicKey = (import.meta.env.VITE_ANTHROPIC_API_KEY as string | undefined)?.trim();
+  const envAnthropicModel = (import.meta.env.VITE_ANTHROPIC_MODEL as string | undefined)?.trim();
+  const settingsAnthropicKey = settings?.provider === 'anthropic' ? settings.apiKey?.trim() : undefined;
+  const settingsAnthropicModel = settings?.provider === 'anthropic' ? settings.model?.trim() : undefined;
 
-  const { provider, apiKey, model } = settings;
+  const apiKey = envAnthropicKey || settingsAnthropicKey;
+  const model = envAnthropicModel || settingsAnthropicModel || 'claude-haiku-4-5-20251001';
 
-  if (provider === 'openai' || provider === 'groq') {
-    const baseUrl = provider === 'groq' ? 'https://api.groq.com/openai/v1' : 'https://api.openai.com/v1';
-    const res = await fetch(`${baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({
-        model: model || (provider === 'groq' ? 'llama3-8b-8192' : 'gpt-4o-mini'),
-        messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
-        max_tokens: 2000,
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message ?? 'AI API error');
-    return data.choices[0].message.content;
+  if (!apiKey) {
+    throw new Error('Claude-only mode is enabled. Set VITE_ANTHROPIC_API_KEY in .env and restart npm run dev.');
   }
 
-  if (provider === 'anthropic') {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
-      },
-      body: JSON.stringify({
-        model: model || 'claude-haiku-4-5-20251001',
-        max_tokens: 2000,
-        system: systemPrompt,
-        messages: [{ role: 'user', content: userPrompt }],
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message ?? 'Anthropic API error');
-    return data.content[0].text;
-  }
+  return { apiKey, model };
+}
 
-  if (provider === 'gemini') {
-    const modelName = model || 'gemini-1.5-flash';
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }] }],
-        }),
-      }
-    );
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message ?? 'Gemini API error');
-    return data.candidates[0].content.parts[0].text;
-  }
+async function callAI(systemPrompt: string, userPrompt: string): Promise<string> {
+  const config = resolveAIConfig();
+  const { apiKey, model } = config;
 
-  throw new Error('Unknown AI provider');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true',
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 2000,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error?.message ?? 'Anthropic API error');
+  return data.content[0].text;
 }
 
 export async function tailorResume(resumeText: string, jobDescription: string, profile: UserProfile): Promise<string> {
@@ -95,64 +73,26 @@ export async function prepareInterviewQuestions(role: string, company: string): 
 
 export async function chatWithAI(messages: { role: 'user' | 'assistant'; content: string }[], profile?: UserProfile | null): Promise<string> {
   const system = `You are a helpful job search assistant for students. You help with resumes, interviews, job searching, H1B sponsorship questions, networking, and career advice. Be concise, practical, and encouraging.${profile ? `\n\nUser profile: ${profile.name}, studying ${profile.major} at ${profile.university}, graduating ${profile.graduationYear}. Work auth: ${profile.workAuthorization}. Skills: ${profile.skills.join(', ')}.` : ''}`;
-  
-  const settings = getSettings();
-  if (!settings?.apiKey) throw new Error('No AI API key configured. Go to Settings → AI Model to add your key.');
 
-  const { provider, apiKey, model } = settings;
+  const config = resolveAIConfig();
+  const { apiKey, model } = config;
 
-  if (provider === 'openai' || provider === 'groq') {
-    const baseUrl = provider === 'groq' ? 'https://api.groq.com/openai/v1' : 'https://api.openai.com/v1';
-    const res = await fetch(`${baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({
-        model: model || (provider === 'groq' ? 'llama3-8b-8192' : 'gpt-4o-mini'),
-        messages: [{ role: 'system', content: system }, ...messages],
-        max_tokens: 1000,
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message ?? 'AI API error');
-    return data.choices[0].message.content;
-  }
-
-  if (provider === 'anthropic') {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
-      },
-      body: JSON.stringify({
-        model: model || 'claude-haiku-4-5-20251001',
-        max_tokens: 1000,
-        system,
-        messages,
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message ?? 'Anthropic API error');
-    return data.content[0].text;
-  }
-
-  if (provider === 'gemini') {
-    const modelName = model || 'gemini-1.5-flash';
-    const allText = messages.map(m => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`).join('\n\n');
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ parts: [{ text: `${system}\n\n${allText}` }] }] }),
-      }
-    );
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message ?? 'Gemini API error');
-    return data.candidates[0].content.parts[0].text;
-  }
-
-  throw new Error('Unknown provider');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true',
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 1000,
+      system,
+      messages,
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error?.message ?? 'Anthropic API error');
+  return data.content[0].text;
 }

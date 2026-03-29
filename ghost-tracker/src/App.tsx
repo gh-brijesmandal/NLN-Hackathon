@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Layout } from './components/Layout';
@@ -16,9 +17,21 @@ import { useApplications } from './hooks/useApplications';
 
 function AppRoutes() {
   const { auth, isDemoMode } = useAuth();
-  const { applications, scan, hasLoaded, scanInbox, stats, addApplication, updateApplication, deleteApplication } = useApplications();
+  const {
+    applications,
+    scan,
+    hasLoaded,
+    error,
+    scanInbox,
+    stats,
+    addApplication,
+    updateApplication,
+    deleteApplication,
+  } = useApplications();
 
-  const handleScan = () => scanInbox(auth.accessToken, isDemoMode);
+  const handleScan = useCallback(() => {
+    scanInbox(auth.accessToken, isDemoMode);
+  }, [auth.accessToken, isDemoMode, scanInbox]);
 
   if (!auth.isAuthenticated && !isDemoMode) {
     return <Routes><Route path="*" element={<Login />} /></Routes>;
@@ -26,7 +39,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route element={<Layout onRefresh={handleScan} scan={scan} />}>
+      <Route element={<Layout onRefresh={handleScan} scan={scan} scanError={error} />}>
         <Route path="/" element={<Dashboard applications={applications} stats={stats} onScan={handleScan} hasLoaded={hasLoaded} />} />
         <Route path="/tracker" element={<Tracker applications={applications} hasLoaded={hasLoaded} onAdd={addApplication} onUpdate={updateApplication} onDelete={deleteApplication} />} />
         <Route path="/profile" element={<Profile />} />
@@ -45,7 +58,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <AuthProvider>
         <AppRoutes />
       </AuthProvider>

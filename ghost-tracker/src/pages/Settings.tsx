@@ -5,33 +5,96 @@ import { loadAISettings, saveAISettings, loadGhostDays, saveGhostDays, clearAllD
 import type { AISettings } from '../types';
 
 const PROVIDERS: { value: AISettings['provider']; label: string; models: string[]; free?: boolean }[] = [
-  { value: 'openai', label: 'OpenAI', models: ['gpt-4o-mini', 'gpt-4o', 'gpt-3.5-turbo'] },
   { value: 'anthropic', label: 'Anthropic (Claude)', models: ['claude-haiku-4-5-20251001', 'claude-sonnet-4-6', 'claude-opus-4-6'] },
-  { value: 'gemini', label: 'Google Gemini', models: ['gemini-1.5-flash', 'gemini-1.5-pro'] },
-  { value: 'groq', label: 'Groq (Free!)', models: ['llama3-8b-8192', 'llama3-70b-8192', 'mixtral-8x7b-32768'], free: true },
 ];
 
 export function Settings() {
   const { auth, signOut, isDemoMode } = useAuth();
   const [ghostDays, setGhostDays] = useState(30);
-  const [aiSettings, setAISettings] = useState<Partial<AISettings>>({ provider: 'openai', model: 'gpt-4o-mini', apiKey: '' });
+  const [aiSettings, setAISettings] = useState<Partial<AISettings>>({ provider: 'anthropic', model: 'claude-haiku-4-5-20251001', apiKey: '' });
   const [showKey, setShowKey] = useState(false);
   const [saved, setSaved] = useState<string | null>(null);
   const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const [claudeTestStatus, setClaudeTestStatus] = useState<'idle' | 'testing' | 'ok' | 'error'>('idle');
+  const [claudeTestMessage, setClaudeTestMessage] = useState<string>('');
 
   useEffect(() => {
     setGhostDays(loadGhostDays());
     const ai = loadAISettings();
-    if (ai) setAISettings(ai);
+    if (ai) {
+      setAISettings({
+        provider: 'anthropic',
+        model: ai.model || 'claude-haiku-4-5-20251001',
+        apiKey: ai.apiKey,
+      });
+    }
   }, []);
 
   const flash = (key: string) => { setSaved(key); setTimeout(() => setSaved(null), 2000); };
 
   const handleSaveGhost = () => { saveGhostDays(ghostDays); flash('ghost'); };
   const handleSaveAI = () => {
-    if (!aiSettings.provider || !aiSettings.model) return;
-    saveAISettings(aiSettings as AISettings);
+    if (!aiSettings.model) return;
+    saveAISettings({
+      provider: 'anthropic',
+      model: aiSettings.model,
+      apiKey: aiSettings.apiKey ?? '',
+    } as AISettings);
     flash('ai');
+  };
+
+  const handleTestClaude = async () => {
+    const envKey = (import.meta.env.VITE_ANTHROPIC_API_KEY as string | undefined)?.trim();
+    const envModel = (import.meta.env.VITE_ANTHROPIC_MODEL as string | undefined)?.trim();
+    const key = envKey || aiSettings.apiKey?.trim();
+    const model = envModel || aiSettings.model || 'claude-haiku-4-5-20251001';
+
+    if (!key) {
+      setClaudeTestStatus('error');
+      setClaudeTestMessage('No Anthropic key found. Set VITE_ANTHROPIC_API_KEY in .env or add API key below.');
+      return;
+    }
+
+    setClaudeTestStatus('testing');
+    setClaudeTestMessage('Testing Claude connection...');
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: 16,
+          system: 'Reply with OK only.',
+          messages: [{ role: 'user', content: 'Health check' }],
+        }),
+      });
+
+      const data = await res.json().catch(() => null);
+      if (!res.ok) {
+        const details = typeof data?.error?.message === 'string'
+          ? data.error.message
+          : typeof data?.message === 'string'
+            ? data.message
+            : '';
+        setClaudeTestStatus('error');
+        setClaudeTestMessage(`Claude test failed (${res.status})${details ? `: ${details}` : ''}`);
+        return;
+      }
+
+      setClaudeTestStatus('ok');
+      setClaudeTestMessage('Claude connection succeeded. You should now see api.anthropic.com in Network logs.');
+    } catch (error) {
+      setClaudeTestStatus('error');
+      setClaudeTestMessage(error instanceof Error
+        ? `Claude test request failed: ${error.message}`
+        : 'Claude test request failed.');
+    }
   };
   const handleClearAll = () => { clearAllData(); setShowClearConfirm(false); window.location.reload(); };
 
@@ -80,8 +143,8 @@ export function Settings() {
               <Bot size={15} className="text-accent" />
             </div>
             <div>
-              <div className="font-semibold text-text-primary text-sm">Your AI API Key</div>
-              <div className="font-mono text-xs text-text-muted mt-0.5">Key is stored in your browser's localStorage only. Never sent to us.</div>
+              <div className="font-semibold text-text-primary text-sm">Claude API Key</div>
+              <div className="font-mono text-xs text-text-muted mt-0.5">GhostTracker is now configured for Claude-only AI and email parsing.</div>
             </div>
           </div>
 
@@ -117,11 +180,24 @@ export function Settings() {
                 </button>
               </div>
             </div>
-            {aiSettings.provider === 'groq' && (
-              <div className="p-3 bg-accent/8 border border-accent/20 rounded-lg font-mono text-xs text-accent/80">
-                🆓 Groq offers a generous free tier. Get a key at <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" className="underline">console.groq.com</a>
-              </div>
-            )}
+            <div className="p-3 bg-accent/8 border border-accent/20 rounded-lg font-mono text-xs text-accent/80">
+              Claude key can come from Settings or from VITE_ANTHROPIC_API_KEY in .env (env takes precedence after restart).
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={handleTestClaude}
+                disabled={claudeTestStatus === 'testing'}
+                className="px-4 py-2 rounded-xl font-semibold text-sm bg-surface border border-border text-text-secondary hover:text-text-primary hover:border-accent/40 transition-all disabled:opacity-60"
+              >
+                {claudeTestStatus === 'testing' ? 'Testing Claude...' : 'Test Claude Connection'}
+              </button>
+              {claudeTestStatus !== 'idle' && (
+                <div className={`font-mono text-xs rounded-lg px-3 py-2 border ${claudeTestStatus === 'ok' ? 'text-accent bg-accent/10 border-accent/20' : claudeTestStatus === 'error' ? 'text-red-400 bg-red-500/10 border-red-500/20' : 'text-text-muted bg-bg border-border'}`}>
+                  {claudeTestMessage}
+                </div>
+              )}
+            </div>
           </div>
 
           <button onClick={handleSaveAI}
