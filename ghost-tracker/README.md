@@ -1,11 +1,11 @@
-# 👻 GhostTracker
+# 👻 GhostBuster
 
 Automatically tracks your job applications from Gmail and flags companies that have gone silent for 30+ days.
 
 ## Features
 
 - **Gmail auto-scan** — detects application confirmation emails automatically
-- **Ghost detection** — labels applications as 👻 Ghosted after 30 days of silence  
+- **Ghost detection** — labels applications as 👻 Ghosted after 30 days of silence
 - **Status tracking** — Applied → Screening → Interviewing → Offer / Rejected / Ghosted
 - **Demo mode** — works instantly without any setup
 - **Read-only** — never modifies, sends, or deletes your emails
@@ -52,6 +52,7 @@ cp .env.example .env
 ```
 
 Edit `.env`:
+
 ```
 VITE_GOOGLE_CLIENT_ID=your_client_id_here.apps.googleusercontent.com
 ```
@@ -70,20 +71,21 @@ Open http://localhost:5173 → click **"Continue with Google"**
 ## How Ghost Detection Works
 
 The app scans Gmail for emails matching application confirmation keywords:
+
 - "application received"
-- "thank you for applying"  
+- "thank you for applying"
 - "we received your application"
 - etc.
 
 Each email thread is classified:
 
-| Signal | Status |
-|--------|--------|
-| Rejection keywords found | Rejected |
-| Interview/offer keywords | Interviewing |
-| Phone screen keywords | Screening |
-| No reply after **30 days** | 👻 Ghosted |
-| Otherwise | Applied |
+| Signal                     | Status       |
+| -------------------------- | ------------ |
+| Rejection keywords found   | Rejected     |
+| Interview/offer keywords   | Interviewing |
+| Phone screen keywords      | Screening    |
+| No reply after **30 days** | 👻 Ghosted   |
+| Otherwise                  | Applied      |
 
 The Ghost Meter bar fills up as days of silence increase, turning amber at the 30-day mark.
 
