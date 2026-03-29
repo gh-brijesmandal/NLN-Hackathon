@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.87",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
     "lucide-react": "^0.378.0",
