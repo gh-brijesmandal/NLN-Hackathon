@@ -3,14 +3,13 @@ import type { JobSuggestion, H1BCompany, UserProfile } from '../types';
 // Fetch jobs from Remotive API (no auth needed, CORS ok)
 export async function fetchJobSuggestions(profile: UserProfile): Promise<JobSuggestion[]> {
   const roles = profile.targetRoles.length > 0 ? profile.targetRoles : ['software engineer'];
-  const query = roles[0].replace(/\s+/g, '+');
   
   try {
     const res = await fetch(`https://remotive.com/api/remote-jobs?search=${encodeURIComponent(roles[0])}&limit=20`);
     if (!res.ok) throw new Error('Remotive API error');
     const data = await res.json();
     
-    return (data.jobs ?? []).slice(0, 20).map((job: any, idx: number): JobSuggestion => ({
+    return (data.jobs ?? []).slice(0, 20).map((job: any): JobSuggestion => ({
       id: String(job.id),
       title: job.title,
       company: job.company_name,

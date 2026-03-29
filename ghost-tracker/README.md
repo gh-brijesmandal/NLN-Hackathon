@@ -31,21 +31,36 @@ Open http://localhost:5173 and click **"Try demo mode"** — no Google account n
 
 1. Go to https://console.cloud.google.com
 2. Create a new project (e.g. "ghost-tracker")
-3. **Enable APIs**: Search and enable:
+3. **Enable APIs**:
    - Gmail API
-   - Google People API (for profile info)
 4. **OAuth Consent Screen**:
    - User Type: External
    - App name: GhostTracker
-   - Add scope: `https://www.googleapis.com/auth/gmail.readonly`
+   - Add scopes:
+     - `https://www.googleapis.com/auth/gmail.readonly`
+     - `openid`
+     - `email`
+     - `profile`
    - Add your email as a test user
 5. **Credentials**:
    - Create → OAuth 2.0 Client ID
    - Application type: Web application
-   - Authorized JavaScript origins: `http://localhost:5173`
+   - Authorized JavaScript origins:
+     - `http://localhost:5173`
+     - `http://127.0.0.1:5173`
    - Copy the **Client ID**
 
 ### 2. Configure .env
+
+Copy `.env.example` to `.env`:
+
+PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+macOS/Linux:
 
 ```bash
 cp .env.example .env
@@ -54,6 +69,8 @@ cp .env.example .env
 Edit `.env`:
 ```
 VITE_GOOGLE_CLIENT_ID=your_client_id_here.apps.googleusercontent.com
+VITE_ANTHROPIC_API_KEY=sk-ant-...   # optional, used for Claude email parsing + AI tools
+VITE_ANTHROPIC_MODEL=claude-haiku-4-5-20251001   # optional
 ```
 
 ### 3. Run
@@ -64,6 +81,13 @@ npm run dev
 ```
 
 Open http://localhost:5173 → click **"Continue with Google"**
+
+### OAuth Troubleshooting
+
+- If Google button is disabled, verify `VITE_GOOGLE_CLIENT_ID` is set in `.env` and restart `npm run dev`.
+- If you get `origin_mismatch`, confirm your OAuth client includes `http://localhost:5173` and `http://127.0.0.1:5173`.
+- If Google popup closes immediately, add your account as a test user in OAuth Consent Screen.
+- If consent succeeds but scan fails, re-check that Gmail API is enabled in the same Google Cloud project as your OAuth client.
 
 ---
 

@@ -1,57 +1,123 @@
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, useRef } from 'react';
 import type { AuthState } from '../types';
-import { fetchUserProfile } from '../lib/gmail';
+import { fetchUserProfile } from '../lib/gmail.ts';
+import { loadAuthSessionCookie, saveAuthSessionCookie, clearAuthSessionCookie } from '../lib/storage';
 
 interface AuthContextValue {
   auth: AuthState;
   signIn: () => void;
   signOut: () => void;
   isDemoMode: boolean;
+  isSigningIn: boolean;
   enterDemoMode: () => void;
+  oauthClientIdConfigured: boolean;
+  googleScriptLoaded: boolean;
+  oauthError: string | null;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined;
+const CLIENT_ID = (import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined)?.trim();
 
 const SCOPES = [
+  'openid',
   'https://www.googleapis.com/auth/gmail.readonly',
   'https://www.googleapis.com/auth/userinfo.email',
   'https://www.googleapis.com/auth/userinfo.profile',
 ].join(' ');
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [auth, setAuth] = useState<AuthState>({
-    isAuthenticated: false,
-    accessToken: null,
-    userEmail: null,
-    userName: null,
-    userAvatar: null,
-    scannedAt: null,
-  });
-  const [isDemoMode, setIsDemoMode] = useState(false);
+const DEFAULT_AUTH_STATE: AuthState = {
+  isAuthenticated: false,
+  accessToken: null,
+  userEmail: null,
+  userName: null,
+  userAvatar: null,
+  scannedAt: null,
+};
 
-  const handleCredentialResponse = useCallback(async (token: string) => {
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const oauthClientIdConfigured = Boolean(CLIENT_ID);
+  const [auth, setAuth] = useState<AuthState>(() => loadAuthSessionCookie() ?? DEFAULT_AUTH_STATE);
+  const [isDemoMode, setIsDemoMode] = useState(false);
+  const [isSigningIn, setIsSigningIn] = useState(false);
+  const signInLockRef = useRef(false);
+  const [googleScriptLoaded, setGoogleScriptLoaded] = useState(
+    Boolean((window as any).google?.accounts?.oauth2)
+  );
+  const [oauthError, setOauthError] = useState<string | null>(null);
+
+  const finishSignIn = useCallback(() => {
+    signInLockRef.current = false;
+    setIsSigningIn(false);
+  }, []);
+
+  const handleCredentialResponse = useCallback(async (token: string, expiresInSeconds?: number) => {
     try {
       const profile = await fetchUserProfile(token);
-      setAuth({
+      const nextAuth: AuthState = {
         isAuthenticated: true,
         accessToken: token,
         userEmail: profile.email,
         userName: profile.name,
         userAvatar: profile.picture,
         scannedAt: new Date().toISOString(),
-      });
+      };
+
+      setAuth(nextAuth);
+      saveAuthSessionCookie(nextAuth, Math.max(60, Math.min(expiresInSeconds ?? 3600, 86400)));
       setIsDemoMode(false);
+      setOauthError(null);
     } catch (e) {
       console.error('Failed to fetch profile:', e);
+      setOauthError(
+        e instanceof Error
+          ? e.message
+          : 'Google sign-in succeeded, but profile fetch failed. Please try again.'
+      );
+    } finally {
+      finishSignIn();
     }
-  }, []);
+  }, [finishSignIn]);
+
+  useEffect(() => {
+    if (googleScriptLoaded) return;
+
+    let attempts = 0;
+    const maxAttempts = 50;
+
+    const intervalId = window.setInterval(() => {
+      if ((window as any).google?.accounts?.oauth2) {
+        setGoogleScriptLoaded(true);
+        window.clearInterval(intervalId);
+        return;
+      }
+
+      attempts += 1;
+      if (attempts >= maxAttempts) {
+        window.clearInterval(intervalId);
+      }
+    }, 200);
+
+    return () => window.clearInterval(intervalId);
+  }, [googleScriptLoaded]);
 
   const signIn = useCallback(() => {
-    if (!CLIENT_ID) {
-      console.warn('No VITE_GOOGLE_CLIENT_ID set — entering demo mode');
-      setIsDemoMode(true);
+    if (signInLockRef.current || isSigningIn) return;
+
+    signInLockRef.current = true;
+    setIsSigningIn(true);
+
+    setOauthError(null);
+
+    if (!oauthClientIdConfigured) {
+      setOauthError('Google OAuth is not configured. Add VITE_GOOGLE_CLIENT_ID to your .env file.');
+      finishSignIn();
+      return;
+    }
+
+    if (!googleScriptLoaded) {
+      setOauthError('Google Sign-In is still loading. Please wait a moment and try again.');
+      finishSignIn();
       return;
     }
 
@@ -59,40 +125,62 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const tokenClient = (window as any).google?.accounts?.oauth2?.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
-      callback: (response: { access_token: string; error?: string }) => {
+      callback: async (response: { access_token?: string; error?: string; expires_in?: number }) => {
         if (response.error) {
           console.error('OAuth error:', response.error);
+          setOauthError(`Google OAuth error: ${response.error}`);
+          finishSignIn();
           return;
         }
-        handleCredentialResponse(response.access_token);
+
+        if (!response.access_token) {
+          setOauthError('Google OAuth did not return an access token. Please try again.');
+          finishSignIn();
+          return;
+        }
+
+        await handleCredentialResponse(response.access_token, response.expires_in);
+      },
+      error_callback: (response: { type?: string }) => {
+        if (response.type === 'popup_failed_to_open' || response.type === 'popup_closed') {
+          setOauthError(
+            'Google popup was blocked or closed. Allow popups for localhost and try again, or use demo mode.'
+          );
+        } else {
+          const reason = response.type ? ` (${response.type})` : '';
+          setOauthError(`Google Sign-In failed${reason}. Please try again.`);
+        }
+        finishSignIn();
       },
     });
 
     if (tokenClient) {
-      tokenClient.requestAccessToken();
+      // Safety valve in case no callback is delivered (e.g. popup blocked by browser policy).
+      window.setTimeout(() => {
+        finishSignIn();
+      }, 20000);
+      tokenClient.requestAccessToken({ prompt: 'consent' });
     } else {
-      console.warn('Google Identity Services not loaded — entering demo mode');
-      setIsDemoMode(true);
+      setOauthError('Google Identity Services is unavailable right now. Please refresh and try again.');
+      finishSignIn();
     }
-  }, [handleCredentialResponse]);
+  }, [finishSignIn, googleScriptLoaded, handleCredentialResponse, isSigningIn, oauthClientIdConfigured]);
 
   const signOut = useCallback(() => {
     if (auth.accessToken && (window as any).google?.accounts?.oauth2) {
       (window as any).google.accounts.oauth2.revoke(auth.accessToken);
     }
-    setAuth({
-      isAuthenticated: false,
-      accessToken: null,
-      userEmail: null,
-      userName: null,
-      userAvatar: null,
-      scannedAt: null,
-    });
+    clearAuthSessionCookie();
+    setAuth(DEFAULT_AUTH_STATE);
     setIsDemoMode(false);
-  }, [auth.accessToken]);
+    finishSignIn();
+    setOauthError(null);
+  }, [auth.accessToken, finishSignIn]);
 
   const enterDemoMode = useCallback(() => {
+    clearAuthSessionCookie();
     setIsDemoMode(true);
+    setOauthError(null);
     setAuth({
       isAuthenticated: true,
       accessToken: null,
@@ -103,15 +191,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
-  // If no CLIENT_ID, auto-enter demo mode after a tick
-  useEffect(() => {
-    if (!CLIENT_ID) {
-      // don't auto-enter, let user click
-    }
-  }, []);
-
   return (
-    <AuthContext.Provider value={{ auth, signIn, isDemoMode, signOut, enterDemoMode }}>
+    <AuthContext.Provider
+      value={{
+        auth,
+        signIn,
+        isDemoMode,
+        isSigningIn,
+        signOut,
+        enterDemoMode,
+        oauthClientIdConfigured,
+        googleScriptLoaded,
+        oauthError,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

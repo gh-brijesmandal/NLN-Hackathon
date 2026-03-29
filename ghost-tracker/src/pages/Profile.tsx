@@ -1,14 +1,27 @@
 import { useState, useEffect, useRef } from 'react';
 import { User, Plus, X, Upload, Save, Check } from 'lucide-react';
 import { loadProfile, saveProfile } from '../lib/storage';
+import { useAuth } from '../context/AuthContext';
 import type { UserProfile } from '../types';
 
 const DEFAULT_PROFILE: UserProfile = {
-  name: '', email: '', phone: '', location: '', linkedin: '', github: '',
+  name: '', email: '', avatarUrl: '', phone: '', location: '', linkedin: '', github: '',
   portfolio: '', university: '', major: '', graduationYear: '', gpa: '',
   skills: [], bio: '', targetRoles: [], targetLocations: [],
   workAuthorization: 'h1b_needed', resumeText: '', resumeFileName: '',
 };
+
+function normalizeProfile(input: Partial<UserProfile> | null): UserProfile {
+  if (!input) return { ...DEFAULT_PROFILE };
+
+  return {
+    ...DEFAULT_PROFILE,
+    ...input,
+    skills: Array.isArray(input.skills) ? input.skills : [],
+    targetRoles: Array.isArray(input.targetRoles) ? input.targetRoles : [],
+    targetLocations: Array.isArray(input.targetLocations) ? input.targetLocations : [],
+  };
+}
 
 const WORK_AUTH_OPTIONS = [
   { value: 'citizen', label: 'US Citizen' },
@@ -20,6 +33,7 @@ const WORK_AUTH_OPTIONS = [
 ];
 
 export function Profile() {
+  const { auth } = useAuth();
   const [profile, setProfile] = useState<UserProfile>(DEFAULT_PROFILE);
   const [saved, setSaved] = useState(false);
   const [newSkill, setNewSkill] = useState('');
@@ -28,14 +42,52 @@ export function Profile() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const p = loadProfile();
-    if (p) setProfile(p);
+    const p = normalizeProfile(loadProfile() as Partial<UserProfile> | null);
+    setProfile(p);
   }, []);
+
+  useEffect(() => {
+    if (!auth.userEmail && !auth.userName && !auth.userAvatar) return;
+
+    setProfile(prev => {
+      let changed = false;
+      const next = { ...prev };
+
+      if (auth.userName && next.name !== auth.userName) {
+        next.name = auth.userName;
+        changed = true;
+      }
+
+      if (auth.userEmail && next.email !== auth.userEmail) {
+        next.email = auth.userEmail;
+        changed = true;
+      }
+
+      if (auth.userAvatar && next.avatarUrl !== auth.userAvatar) {
+        next.avatarUrl = auth.userAvatar;
+        changed = true;
+      }
+
+      if (changed) {
+        saveProfile(next);
+        return next;
+      }
+
+      return prev;
+    });
+  }, [auth.userAvatar, auth.userEmail, auth.userName]);
 
   const set = (key: keyof UserProfile, val: any) => setProfile(p => ({ ...p, [key]: val }));
 
+  const resolvedAvatarUrl = auth.userAvatar || profile.avatarUrl || '';
+
   const handleSave = () => {
-    saveProfile(profile);
+    const nextProfile = {
+      ...profile,
+      avatarUrl: profile.avatarUrl || auth.userAvatar || '',
+    };
+    setProfile(nextProfile);
+    saveProfile(nextProfile);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   };
@@ -87,6 +139,19 @@ export function Profile() {
         <section className="bg-surface border border-border rounded-2xl p-5">
           <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-4">Basic Info</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {resolvedAvatarUrl && (
+              <div className="sm:col-span-2 flex items-center gap-3 rounded-xl border border-border bg-bg px-3 py-2">
+                <img
+                  src={resolvedAvatarUrl}
+                  alt="Google profile"
+                  className="size-10 rounded-full border border-border object-cover"
+                />
+                <div>
+                  <div className="font-mono text-xs text-text-muted">Google avatar</div>
+                  <div className="text-xs text-text-secondary">Auto-synced from your signed-in account</div>
+                </div>
+              </div>
+            )}
             {([['name','Full Name'], ['email','Email'], ['phone','Phone'], ['location','Current Location'], ['linkedin','LinkedIn URL'], ['github','GitHub URL'], ['portfolio','Portfolio URL']] as const).map(([key, label]) => (
               <div key={key} className={key === 'linkedin' || key === 'github' || key === 'portfolio' ? 'sm:col-span-2' : ''}>
                 <label className="block font-mono text-xs text-text-muted mb-1.5">{label}</label>
