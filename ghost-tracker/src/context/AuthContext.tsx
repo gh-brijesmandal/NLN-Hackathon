@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import type { AuthState } from '../types';
 import { fetchUserProfile } from '../lib/gmail';
+import { loadAuthSession, saveAuthSession, clearAuthSession } from '../lib/storage';
 
 interface AuthContextValue {
   auth: AuthState;
@@ -20,29 +21,43 @@ const SCOPES = [
   'https://www.googleapis.com/auth/userinfo.profile',
 ].join(' ');
 
+const DEFAULT_AUTH_STATE: AuthState = {
+  isAuthenticated: false,
+  accessToken: null,
+  userEmail: null,
+  userName: null,
+  userAvatar: null,
+  scannedAt: null,
+};
+
+function getInitialAuthState(): AuthState {
+  const saved = loadAuthSession();
+  return saved?.auth ?? DEFAULT_AUTH_STATE;
+}
+
+function getInitialDemoMode(): boolean {
+  const saved = loadAuthSession();
+  return saved?.isDemoMode ?? false;
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [auth, setAuth] = useState<AuthState>({
-    isAuthenticated: false,
-    accessToken: null,
-    userEmail: null,
-    userName: null,
-    userAvatar: null,
-    scannedAt: null,
-  });
-  const [isDemoMode, setIsDemoMode] = useState(false);
+  const [auth, setAuth] = useState<AuthState>(getInitialAuthState);
+  const [isDemoMode, setIsDemoMode] = useState(getInitialDemoMode);
 
   const handleCredentialResponse = useCallback(async (token: string) => {
     try {
       const profile = await fetchUserProfile(token);
-      setAuth({
+      const nextAuth: AuthState = {
         isAuthenticated: true,
         accessToken: token,
         userEmail: profile.email,
         userName: profile.name,
         userAvatar: profile.picture,
         scannedAt: new Date().toISOString(),
-      });
+      };
+      setAuth(nextAuth);
       setIsDemoMode(false);
+      saveAuthSession(nextAuth, false);
     } catch (e) {
       console.error('Failed to fetch profile:', e);
     }
@@ -80,27 +95,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (auth.accessToken && (window as any).google?.accounts?.oauth2) {
       (window as any).google.accounts.oauth2.revoke(auth.accessToken);
     }
-    setAuth({
-      isAuthenticated: false,
-      accessToken: null,
-      userEmail: null,
-      userName: null,
-      userAvatar: null,
-      scannedAt: null,
-    });
+    setAuth(DEFAULT_AUTH_STATE);
     setIsDemoMode(false);
+    clearAuthSession();
   }, [auth.accessToken]);
 
   const enterDemoMode = useCallback(() => {
-    setIsDemoMode(true);
-    setAuth({
+    const nextAuth: AuthState = {
       isAuthenticated: true,
       accessToken: null,
       userEmail: 'demo@example.com',
       userName: 'Demo User',
       userAvatar: null,
       scannedAt: new Date().toISOString(),
-    });
+    };
+    setIsDemoMode(true);
+    setAuth(nextAuth);
+    saveAuthSession(nextAuth, true);
   }, []);
 
   // If no CLIENT_ID, auto-enter demo mode after a tick
