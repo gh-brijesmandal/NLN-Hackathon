@@ -15,7 +15,7 @@ Automatically tracks your job applications from Gmail and flags companies that h
 ## Quick Start (Demo Mode)
 
 ```bash
-unzip ghost-tracker.zip
+Clone the Repo
 cd ghost-tracker
 npm install
 npm run dev
@@ -162,3 +162,7 @@ src/
 - Read-only Gmail access — never sends, modifies, or deletes emails
 - Email content is never stored on any server
 - OAuth token lives in browser memory and is cleared on sign out
+
+## View
+
+- To see the results, view at https://jobghostbuster.netlify.app
