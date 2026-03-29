@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Ghost, TrendingUp, Inbox, AlertTriangle, CheckCircle2, ArrowRight, Briefcase, Bot, FileText } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
@@ -17,8 +17,14 @@ interface Props {
 
 export function Dashboard({ applications, stats, onScan, hasLoaded }: Props) {
   const { auth } = useAuth();
+  const hasTriggeredInitialScan = useRef(false);
 
-  useEffect(() => { if (!hasLoaded) onScan(); }, [hasLoaded, onScan]);
+  useEffect(() => {
+    if (!hasLoaded && !hasTriggeredInitialScan.current) {
+      hasTriggeredInitialScan.current = true;
+      onScan();
+    }
+  }, [hasLoaded, onScan]);
 
   const ghosted = applications.filter(a => a.status === 'ghosted');
   const active = applications.filter(a => ['applied', 'screening', 'interviewing'].includes(a.status));

@@ -20,7 +20,21 @@ const FEATURES = [
 ];
 
 export function Login() {
-  const { signIn, enterDemoMode } = useAuth();
+  const {
+    signIn,
+    enterDemoMode,
+    isSigningIn,
+    oauthClientIdConfigured,
+    googleScriptLoaded,
+    oauthError,
+  } = useAuth();
+
+  const isGoogleSignInDisabled = isSigningIn || !oauthClientIdConfigured || !googleScriptLoaded;
+  const oauthSetupMessage = !oauthClientIdConfigured
+    ? 'Google OAuth is not configured. Add VITE_GOOGLE_CLIENT_ID to your .env file.'
+    : !googleScriptLoaded
+      ? 'Loading Google Sign-In SDK...'
+      : null;
 
   return (
     <div className="min-h-screen bg-bg flex overflow-hidden relative">
@@ -82,7 +96,8 @@ export function Login() {
         <div className="flex flex-col gap-3 max-w-sm">
           <button
             onClick={signIn}
-            className="flex items-center justify-center gap-3 w-full py-3.5 px-6 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent/90 transition-all active:scale-[0.98] shadow-lg shadow-accent/20"
+            disabled={isGoogleSignInDisabled}
+            className="flex items-center justify-center gap-3 w-full py-3.5 px-6 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent/90 transition-all active:scale-[0.98] shadow-lg shadow-accent/20 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-accent"
           >
             {/* Google G logo */}
             <svg className="size-4" viewBox="0 0 24 24" aria-hidden="true">
@@ -103,7 +118,7 @@ export function Login() {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               />
             </svg>
-            Continue with Google
+            {isSigningIn ? 'Connecting to Google...' : 'Continue with Google'}
           </button>
 
           <button
@@ -113,6 +128,18 @@ export function Login() {
             <Sparkles size={15} className="text-warn" />
             Try demo mode
           </button>
+
+          {oauthSetupMessage && (
+            <p className="font-mono text-xs text-warn/90 bg-warn/10 border border-warn/20 rounded-lg px-3 py-2">
+              {oauthSetupMessage}
+            </p>
+          )}
+
+          {oauthError && (
+            <p className="font-mono text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+              {oauthError}
+            </p>
+          )}
         </div>
 
         <p className="font-mono text-xs text-text-muted mt-6 max-w-xs leading-relaxed">

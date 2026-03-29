@@ -73,6 +73,7 @@ export interface StatsSnapshot {
 export interface UserProfile {
   name: string;
   email: string;
+  avatarUrl?: string;
   phone?: string;
   location?: string;
   linkedin?: string;
@@ -115,7 +116,7 @@ export interface H1BCompany {
 }
 
 export interface AISettings {
-  provider: 'openai' | 'anthropic' | 'gemini' | 'groq';
+  provider: 'anthropic';
   apiKey: string;
   model: string;
 }
