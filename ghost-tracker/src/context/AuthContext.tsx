@@ -188,7 +188,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       userName: 'Demo User',
       userAvatar: null,
       scannedAt: new Date().toISOString(),
-    });
+    };
+    setIsDemoMode(true);
+    setAuth(nextAuth);
+    saveAuthSession(nextAuth, true);
   }, []);
 
   return (

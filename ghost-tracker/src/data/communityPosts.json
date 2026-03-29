@@ -1,0 +1,110 @@
+[
+    {
+        "id": "INT_01",
+        "title": "Software Engineering Internships - Google Careers",
+        "url": "https://www.google.com/about/careers/applications/jobs/results/?q=Software%20Engineering%20Intern",
+        "score": 920,
+        "numComments": 142,
+        "selftext": "Direct access to Google's internship portal. Applications for summer and off-season roles usually open 6-9 months in advance.",
+        "createdAt": "2026-03-28T10:00:00Z"
+    },
+    {
+        "id": "FT_02",
+        "title": "Full-Time Entry Level Software Engineer Roles - LinkedIn",
+        "url": "https://www.linkedin.com/jobs/search/?keywords=Entry%20Level%20Software%20Engineer",
+        "score": 750,
+        "numComments": 89,
+        "selftext": "A real-time list of full-time engineering positions for recent graduates across various industries.",
+        "createdAt": "2026-03-27T14:30:00Z"
+    },
+    {
+        "id": "ENG_03",
+        "title": "Roadmap.sh: Interactive Engineering Career Paths",
+        "url": "https://roadmap.sh/",
+        "score": 1500,
+        "numComments": 340,
+        "selftext": "The gold standard for technical engineering guidance. Provides step-by-step visual paths for Frontend, Backend, and DevOps.",
+        "createdAt": "2026-03-25T09:15:00Z"
+    },
+    {
+        "id": "GUIDE_04",
+        "title": "The Engineering Manager's Guide to Career Growth",
+        "url": "https://charity.wtf/blog/",
+        "score": 620,
+        "numComments": 55,
+        "selftext": "Deep-dive career guidance from Charity Majors on navigating the 'Engineer/Manager Pendulum' and technical leadership.",
+        "createdAt": "2026-03-24T11:00:00Z"
+    },
+    {
+        "id": "INT_05",
+        "title": "NASA OSTEM Internships",
+        "url": "https://intern.nasa.gov/",
+        "score": 880,
+        "numComments": 76,
+        "selftext": "Real-world engineering internships in aerospace, robotics, and data science directly through NASA's official portal.",
+        "createdAt": "2026-03-20T08:00:00Z"
+    },
+    {
+        "id": "FT_06",
+        "title": "Levels.fyi: Engineering Salary and Benefits Data",
+        "url": "https://www.levels.fyi/",
+        "score": 1340,
+        "numComments": 210,
+        "selftext": "Critical tool for full-time job seekers to compare total compensation (salary, bonus, equity) across top tech firms.",
+        "createdAt": "2026-03-26T16:45:00Z"
+    },
+    {
+        "id": "ENG_07",
+        "title": "AWS Builders Library: Engineering at Scale",
+        "url": "https://aws.amazon.com/builders-library/",
+        "score": 910,
+        "numComments": 42,
+        "selftext": "Technical articles by Amazon engineers on how they build and operate software that serves millions of users.",
+        "createdAt": "2026-03-22T13:20:00Z"
+    },
+    {
+        "id": "GUIDE_08",
+        "title": "Tech Interview Handbook",
+        "url": "https://www.techinterviewhandbook.org/",
+        "score": 1100,
+        "numComments": 185,
+        "selftext": "Free, high-quality career guidance for acing engineering interviews, curated by industry professionals.",
+        "createdAt": "2026-03-28T09:00:00Z"
+    },
+    {
+        "id": "INT_09",
+        "title": "Microsoft University Internship Program",
+        "url": "https://careers.microsoft.com/v2/global/en/students.html",
+        "score": 790,
+        "numComments": 63,
+        "selftext": "Official application site for Microsoft's undergraduate and graduate engineering internship programs.",
+        "createdAt": "2026-03-21T10:30:00Z"
+    },
+    {
+        "id": "FT_10",
+        "title": "Indeed: Mechanical Engineering Full-Time Jobs",
+        "url": "https://www.indeed.com/q-Mechanical-Engineer-jobs.html",
+        "score": 430,
+        "numComments": 27,
+        "selftext": "Direct search link for full-time mechanical engineering roles across multiple sectors including automotive and energy.",
+        "createdAt": "2026-03-29T02:00:00Z"
+    },
+    {
+        "id": "ENG_11",
+        "title": "GitHub Explore: Trending Engineering Projects",
+        "url": "https://github.com/explore",
+        "score": 960,
+        "numComments": 120,
+        "selftext": "A live feed of the most impactful open-source engineering projects. Great for technical skill-building.",
+        "createdAt": "2026-03-29T01:00:00Z"
+    },
+    {
+        "id": "GUIDE_12",
+        "title": "The Pragmatic Engineer: Career Growth Newsletter",
+        "url": "https://blog.pragmaticengineer.com/",
+        "score": 1420,
+        "numComments": 290,
+        "selftext": "The #1 newsletter for software engineers, providing guidance on the tech market, hiring, and seniority levels.",
+        "createdAt": "2026-03-28T22:00:00Z"
+    }
+]
