@@ -1,4 +1,10 @@
-import type { JobSuggestion, H1BCompany, UserProfile } from "../types";
+import type {
+  JobSuggestion,
+  H1BCompany,
+  UserProfile,
+  RedditPost,
+} from "../types";
+import communityPosts from "../data/communityPosts.json";
 
 // Fetch jobs from Remotive API (no auth needed, CORS ok)
 export async function fetchJobSuggestions(
@@ -8,7 +14,6 @@ export async function fetchJobSuggestions(
     profile.targetRoles.length > 0
       ? profile.targetRoles
       : ["software engineer"];
-  const query = roles[0].replace(/\s+/g, "+");
 
   try {
     const res = await fetch(
@@ -18,7 +23,7 @@ export async function fetchJobSuggestions(
     const data = await res.json();
 
     return (data.jobs ?? []).slice(0, 20).map(
-      (job: any, idx: number): JobSuggestion => ({
+      (job: any): JobSuggestion => ({
         id: String(job.id),
         title: job.title,
         company: job.company_name,
@@ -414,30 +419,19 @@ function getH1BList(): H1BCompany[] {
   ];
 }
 
-// Fetch job tips from Reddit (via public JSON API)
-export async function fetchRedditPosts(
-  subreddit: string = "cscareerquestions",
-  limit: number = 10,
-) {
+// Returns community posts from static JSON
+export function fetchRedditPosts(): RedditPost[] {
   try {
-    // values = cscareerquestions, jobs, internships, datascience, financialcareers, careerguidance
-    // const res = await fetch(
-    //   `https://www.reddit.com/r/${subreddit}/hot.json?limit=${limit}`,
-    //   { headers: { 'User-Agent': 'JobTracker/1.0' } }
-    // );
-    // if (!res.ok) throw new Error('Reddit API error');
-    // const data = await res.json();
-    // return data.data.children.map((c: any) => ({
-    //   id: c.data.id,
-    //   title: c.data.title,
-    //   url: `https://reddit.com${c.data.permalink}`,
-    //   subreddit: c.data.subreddit,
-    //   score: c.data.score,
-    //   numComments: c.data.num_comments,
-    //   selftext: c.data.selftext?.slice(0, 200),
-    //   createdAt: new Date(c.data.created_utc * 1000).toISOString(),
-    // }));
-  } catch {
+    // communityPosts.json must be a root-level array: [{id, title, url, score, numComments, selftext, createdAt}, ...]
+    if (!Array.isArray(communityPosts)) {
+      console.error(
+        "[fetchRedditPosts] communityPosts.json is not an array — check the file structure.",
+      );
+      return [];
+    }
+    return communityPosts as RedditPost[];
+  } catch (e) {
+    console.error("[fetchRedditPosts] failed:", e);
     return [];
   }
 }
@@ -460,6 +454,7 @@ function getMockJobs(profile: UserProfile): JobSuggestion[] {
       salary: "$130k-$160k",
       sponsorsH1B: true,
       matchScore: 92,
+      description: "Full-stack engineering role at Stripe.",
     },
     {
       id: "2",
@@ -473,6 +468,7 @@ function getMockJobs(profile: UserProfile): JobSuggestion[] {
       salary: "$120k-$150k",
       sponsorsH1B: true,
       matchScore: 85,
+      description: "Backend engineering role focused on edge infrastructure.",
     },
     {
       id: "3",
@@ -486,6 +482,7 @@ function getMockJobs(profile: UserProfile): JobSuggestion[] {
       salary: "$140k-$180k",
       sponsorsH1B: true,
       matchScore: 78,
+      description: "Data engineering role building large-scale pipelines.",
     },
   ];
 }

@@ -9,13 +9,6 @@ import {
 import { fetchRedditPosts } from "../lib/jobs";
 import type { RedditPost } from "../types";
 
-const SUBREDDITS = [
-  { id: "internships", label: "Internships" },
-  { id: "full-time", label: "Full Time Jobs" },
-  { id: "Engineering", label: "Engineering" },
-  { id: "careerguidance", label: "Career Guidance" },
-];
-
 const STATIC_TIPS = [
   {
     category: "Resume",
@@ -87,13 +80,12 @@ const CATEGORY_COLORS: Record<string, string> = {
 export function JobHelp() {
   const [posts, setPosts] = useState<RedditPost[]>([]);
   const [loading, setLoading] = useState(false);
-  const [subreddit, setSubreddit] = useState("cscareerquestions");
   const [catFilter, setCatFilter] = useState("All");
 
-  const loadPosts = async (sub: string) => {
+  const loadPosts = () => {
     setLoading(true);
     try {
-      setPosts(await fetchRedditPosts(sub, 12));
+      setPosts(fetchRedditPosts());
     } catch {
       setPosts([]);
     } finally {
@@ -102,13 +94,14 @@ export function JobHelp() {
   };
 
   useEffect(() => {
-    loadPosts(subreddit);
+    loadPosts();
   }, []);
 
   const categories = [
     "All",
     ...Array.from(new Set(STATIC_TIPS.map((t) => t.category))),
   ];
+
   const filteredTips =
     catFilter === "All"
       ? STATIC_TIPS
@@ -139,7 +132,11 @@ export function JobHelp() {
               <button
                 key={c}
                 onClick={() => setCatFilter(c)}
-                className={`px-2.5 py-1 rounded-full font-mono text-[10px] border transition-all ${catFilter === c ? "bg-accent/15 border-accent/30 text-accent" : "bg-surface border-border text-text-muted hover:border-muted"}`}
+                className={`px-2.5 py-1 rounded-full font-mono text-[10px] border transition-all ${
+                  catFilter === c
+                    ? "bg-accent/15 border-accent/30 text-accent"
+                    : "bg-surface border-border text-text-muted hover:border-muted"
+                }`}
               >
                 {c}
               </button>
@@ -147,13 +144,16 @@ export function JobHelp() {
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-3">
-          {filteredTips.map((t, i) => (
+          {filteredTips.map((t) => (
             <div
-              key={i}
+              key={`${t.category}-${t.tip}`}
               className="bg-surface border border-border rounded-xl p-4"
             >
               <span
-                className={`inline-block px-2 py-0.5 rounded-full border font-mono text-[10px] mb-2 ${CATEGORY_COLORS[t.category] ?? "bg-border text-text-muted border-border"}`}
+                className={`inline-block px-2 py-0.5 rounded-full border font-mono text-[10px] mb-2 ${
+                  CATEGORY_COLORS[t.category] ??
+                  "bg-border text-text-muted border-border"
+                }`}
               >
                 {t.category}
               </span>
@@ -165,37 +165,21 @@ export function JobHelp() {
         </div>
       </div>
 
-      {/* Reddit section */}
+      {/* Community posts section */}
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <h2 className="font-semibold text-text-primary text-sm flex items-center gap-2">
             <MessageSquare size={15} className="text-accent" /> Community
             Discussions
           </h2>
-          <div className="flex items-center gap-2">
-            <select
-              value={subreddit}
-              onChange={(e) => {
-                setSubreddit(e.target.value);
-                loadPosts(e.target.value);
-              }}
-              className="bg-surface border border-border rounded-lg px-3 py-1.5 font-mono text-xs text-text-secondary focus:outline-none focus:border-accent/40"
-            >
-              {SUBREDDITS.map((s) => (
-                <option key={s.id} value={s.id}>
-                  r/{s.label}
-                </option>
-              ))}
-            </select>
-            <button
-              onClick={() => loadPosts(subreddit)}
-              disabled={loading}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-surface border border-border text-text-muted rounded-lg hover:text-text-primary font-mono text-xs transition-colors disabled:opacity-50"
-            >
-              <RefreshCw size={12} className={loading ? "animate-spin" : ""} />
-              Refresh
-            </button>
-          </div>
+          <button
+            onClick={loadPosts}
+            disabled={loading}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-surface font-mono text-[10px] text-text-muted hover:border-muted transition-colors disabled:opacity-50"
+          >
+            <RefreshCw size={11} className={loading ? "animate-spin" : ""} />
+            Refresh
+          </button>
         </div>
 
         {loading ? (
@@ -242,9 +226,6 @@ export function JobHelp() {
                       </span>
                       <span className="flex items-center gap-1 font-mono text-[10px] text-text-muted">
                         <MessageSquare size={10} /> {post.numComments}
-                      </span>
-                      <span className="font-mono text-[10px] text-text-muted">
-                        r/{post.subreddit}
                       </span>
                     </div>
                   </div>
