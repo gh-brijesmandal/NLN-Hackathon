@@ -1,129 +1,172 @@
-import { useState } from 'react';
-import { Ghost, Shield, Bell, LogOut, Info, Check } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Settings as SettingsIcon, Shield, Ghost, Bot, Mail, Check, Eye, EyeOff, Trash2, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { loadAISettings, saveAISettings, loadGhostDays, saveGhostDays, clearAllData } from '../lib/storage';
+import type { AISettings } from '../types';
+
+const PROVIDERS: { value: AISettings['provider']; label: string; models: string[]; free?: boolean }[] = [
+  { value: 'openai', label: 'OpenAI', models: ['gpt-4o-mini', 'gpt-4o', 'gpt-3.5-turbo'] },
+  { value: 'anthropic', label: 'Anthropic (Claude)', models: ['claude-haiku-4-5-20251001', 'claude-sonnet-4-6', 'claude-opus-4-6'] },
+  { value: 'gemini', label: 'Google Gemini', models: ['gemini-1.5-flash', 'gemini-1.5-pro'] },
+  { value: 'groq', label: 'Groq (Free!)', models: ['llama3-8b-8192', 'llama3-70b-8192', 'mixtral-8x7b-32768'], free: true },
+];
 
 export function Settings() {
   const { auth, signOut, isDemoMode } = useAuth();
   const [ghostDays, setGhostDays] = useState(30);
-  const [saved, setSaved] = useState(false);
+  const [aiSettings, setAISettings] = useState<Partial<AISettings>>({ provider: 'openai', model: 'gpt-4o-mini', apiKey: '' });
+  const [showKey, setShowKey] = useState(false);
+  const [saved, setSaved] = useState<string | null>(null);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
 
-  const handleSave = () => {
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+  useEffect(() => {
+    setGhostDays(loadGhostDays());
+    const ai = loadAISettings();
+    if (ai) setAISettings(ai);
+  }, []);
+
+  const flash = (key: string) => { setSaved(key); setTimeout(() => setSaved(null), 2000); };
+
+  const handleSaveGhost = () => { saveGhostDays(ghostDays); flash('ghost'); };
+  const handleSaveAI = () => {
+    if (!aiSettings.provider || !aiSettings.model) return;
+    saveAISettings(aiSettings as AISettings);
+    flash('ai');
   };
+  const handleClearAll = () => { clearAllData(); setShowClearConfirm(false); window.location.reload(); };
+
+  const selectedProvider = PROVIDERS.find(p => p.value === aiSettings.provider);
 
   return (
-    <div className="p-8 max-w-2xl mx-auto animate-fade-in">
-      <div className="mb-8">
-        <h1 className="font-display font-semibold text-3xl text-text-primary mb-1">Settings</h1>
-        <p className="font-mono text-xs text-text-muted">Manage your account and preferences</p>
+    <div className="p-4 sm:p-8 max-w-2xl mx-auto animate-fade-in">
+      <div className="mb-6">
+        <div className="flex items-center gap-3 mb-1">
+          <SettingsIcon size={20} className="text-accent" />
+          <h1 className="font-display font-semibold text-2xl sm:text-3xl text-text-primary">Settings</h1>
+        </div>
+        <p className="font-mono text-xs text-text-muted">All settings are stored in your browser only.</p>
       </div>
 
       {/* Account */}
-      <section className="mb-6">
+      <section className="mb-5">
         <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Account</div>
         <div className="bg-surface border border-border rounded-2xl p-5">
           <div className="flex items-center gap-4">
             {auth.userAvatar ? (
-              <img src={auth.userAvatar} alt="" className="size-12 rounded-xl ring-1 ring-border" />
+              <img src={auth.userAvatar} alt="" className="size-12 rounded-xl ring-1 ring-border flex-shrink-0" />
             ) : (
-              <div className="size-12 rounded-xl bg-ghost/20 flex items-center justify-center font-display text-xl text-ghost">
+              <div className="size-12 rounded-xl bg-ghost/20 flex items-center justify-center font-display text-xl text-ghost flex-shrink-0">
                 {(auth.userName ?? 'D').charAt(0)}
               </div>
             )}
-            <div>
-              <div className="font-semibold text-text-primary">
-                {auth.userName ?? 'Demo User'}
-              </div>
-              <div className="font-mono text-xs text-text-muted mt-0.5">
-                {auth.userEmail ?? 'demo mode'}
-              </div>
-              {isDemoMode && (
-                <span className="inline-block mt-1.5 font-mono text-[10px] px-2 py-0.5 bg-warn/10 text-warn border border-warn/20 rounded-full">
-                  DEMO MODE
-                </span>
-              )}
+            <div className="flex-1 min-w-0">
+              <div className="font-semibold text-text-primary truncate">{auth.userName ?? 'Demo User'}</div>
+              <div className="font-mono text-xs text-text-muted truncate mt-0.5">{auth.userEmail ?? 'demo mode'}</div>
+              {isDemoMode && <span className="inline-block mt-1.5 font-mono text-[10px] px-2 py-0.5 bg-accent/10 text-accent border border-accent/20 rounded-full">DEMO MODE</span>}
             </div>
-            <button
-              onClick={signOut}
-              className="ml-auto flex items-center gap-2 px-4 py-2 rounded-xl bg-danger/10 text-danger border border-danger/20 font-mono text-xs hover:bg-danger/20 transition-all"
-            >
-              <LogOut size={13} />
-              Sign out
+            <button onClick={signOut} className="flex items-center gap-2 px-3 py-2 rounded-xl bg-danger/10 text-danger border border-danger/20 font-mono text-xs hover:bg-danger/20 transition-all flex-shrink-0">
+              <LogOut size={13} /> Sign out
             </button>
           </div>
         </div>
       </section>
 
-      {/* Ghosting threshold */}
-      <section className="mb-6">
-        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">
-          Ghost Detection
+      {/* AI Model */}
+      <section className="mb-5">
+        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">AI Model</div>
+        <div className="bg-surface border border-border rounded-2xl p-5 space-y-4">
+          <div className="flex items-start gap-3">
+            <div className="size-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <Bot size={15} className="text-accent" />
+            </div>
+            <div>
+              <div className="font-semibold text-text-primary text-sm">Your AI API Key</div>
+              <div className="font-mono text-xs text-text-muted mt-0.5">Key is stored in your browser's localStorage only. Never sent to us.</div>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <div>
+              <label className="block font-mono text-xs text-text-muted mb-1.5">Provider</label>
+              <select value={aiSettings.provider}
+                onChange={e => { const p = e.target.value as AISettings['provider']; const prov = PROVIDERS.find(x => x.value === p); setAISettings(s => ({ ...s, provider: p, model: prov?.models[0] ?? '' })); }}
+                className="w-full px-3 py-2 bg-bg border border-border rounded-lg font-mono text-sm text-text-primary focus:outline-none focus:border-accent/50">
+                {PROVIDERS.map(p => <option key={p.value} value={p.value}>{p.label}{p.free ? ' 🆓' : ''}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="block font-mono text-xs text-text-muted mb-1.5">Model</label>
+              <select value={aiSettings.model}
+                onChange={e => setAISettings(s => ({ ...s, model: e.target.value }))}
+                className="w-full px-3 py-2 bg-bg border border-border rounded-lg font-mono text-sm text-text-primary focus:outline-none focus:border-accent/50">
+                {selectedProvider?.models.map(m => <option key={m} value={m}>{m}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="block font-mono text-xs text-text-muted mb-1.5">API Key</label>
+              <div className="relative">
+                <input
+                  type={showKey ? 'text' : 'password'}
+                  value={aiSettings.apiKey ?? ''}
+                  onChange={e => setAISettings(s => ({ ...s, apiKey: e.target.value }))}
+                  placeholder={`Paste your ${selectedProvider?.label} API key here`}
+                  className="w-full pl-3 pr-10 py-2 bg-bg border border-border rounded-lg font-mono text-sm text-text-primary focus:outline-none focus:border-accent/50 transition-colors"
+                />
+                <button onClick={() => setShowKey(!showKey)} className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-secondary">
+                  {showKey ? <EyeOff size={14} /> : <Eye size={14} />}
+                </button>
+              </div>
+            </div>
+            {aiSettings.provider === 'groq' && (
+              <div className="p-3 bg-accent/8 border border-accent/20 rounded-lg font-mono text-xs text-accent/80">
+                🆓 Groq offers a generous free tier. Get a key at <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer" className="underline">console.groq.com</a>
+              </div>
+            )}
+          </div>
+
+          <button onClick={handleSaveAI}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all ${saved === 'ai' ? 'bg-accent/20 text-accent border border-accent/30' : 'bg-accent text-bg hover:bg-accent/90'}`}>
+            {saved === 'ai' ? <><Check size={14} /> Saved!</> : 'Save AI Settings'}
+          </button>
         </div>
+      </section>
+
+      {/* Ghost threshold */}
+      <section className="mb-5">
+        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Ghost Detection</div>
         <div className="bg-surface border border-border rounded-2xl p-5 space-y-4">
           <div className="flex items-start gap-3">
             <div className="size-8 rounded-lg bg-warn/10 flex items-center justify-center flex-shrink-0">
               <Ghost size={15} className="text-warn" />
             </div>
-            <div>
+            <div className="flex-1">
               <div className="font-semibold text-text-primary text-sm">Ghosting threshold</div>
-              <div className="font-mono text-xs text-text-muted mt-0.5">
-                Mark as ghosted after this many days of no response
+              <div className="font-mono text-xs text-text-muted mt-0.5">Mark as ghosted after this many days of no response</div>
+              <div className="mt-3 flex items-center gap-4">
+                <input type="range" min={7} max={60} step={7} value={ghostDays}
+                  onChange={e => setGhostDays(Number(e.target.value))}
+                  className="flex-1 accent-accent" />
+                <div className="font-display font-semibold text-xl text-accent w-12 text-right">{ghostDays}d</div>
               </div>
             </div>
           </div>
-
-          <div className="pl-11">
-            <div className="flex items-center gap-4">
-              <input
-                type="range"
-                min={7}
-                max={60}
-                step={7}
-                value={ghostDays}
-                onChange={e => setGhostDays(Number(e.target.value))}
-                className="flex-1 accent-accent"
-              />
-              <div className="font-display font-semibold text-2xl text-accent w-16 text-right">
-                {ghostDays}d
-              </div>
-            </div>
-            <div className="flex justify-between font-mono text-xs text-text-muted mt-1">
-              <span>1 week</span>
-              <span>2 months</span>
-            </div>
-          </div>
+          <button onClick={handleSaveGhost}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all ${saved === 'ghost' ? 'bg-accent/20 text-accent border border-accent/30' : 'bg-accent text-bg hover:bg-accent/90'}`}>
+            {saved === 'ghost' ? <><Check size={14} /> Saved!</> : 'Save Threshold'}
+          </button>
         </div>
       </section>
 
-      {/* Privacy */}
-      <section className="mb-6">
-        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Privacy</div>
+      {/* Email integrations */}
+      <section className="mb-5">
+        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Email Integration</div>
         <div className="bg-surface border border-border rounded-2xl overflow-hidden divide-y divide-border">
           {[
-            {
-              icon: Shield,
-              title: 'Read-only Gmail access',
-              desc: 'GhostTracker can only read your emails — never send, modify, or delete.',
-              color: 'text-accent bg-accent/10',
-            },
-            {
-              icon: Info,
-              title: 'No email storage',
-              desc: 'Email content is never stored on our servers. Everything stays in your browser.',
-              color: 'text-ghost bg-ghost/10',
-            },
-            {
-              icon: Bell,
-              title: 'Token stays local',
-              desc: 'Your Google OAuth token lives in memory and is cleared when you sign out.',
-              color: 'text-ghost bg-ghost/10',
-            },
+            { icon: Mail, title: 'Gmail / Google', desc: 'Connect via OAuth to auto-detect application emails and status updates.', color: 'text-accent bg-accent/10' },
+            { icon: Mail, title: 'Outlook / Microsoft', desc: 'Microsoft OAuth integration for Outlook email scanning. (Sign in from Login screen)', color: 'text-warn bg-warn/10' },
           ].map(({ icon: Icon, title, desc, color }) => (
             <div key={title} className="flex items-start gap-4 p-5">
-              <div className={`size-8 rounded-lg flex items-center justify-center flex-shrink-0 ${color}`}>
-                <Icon size={15} />
-              </div>
+              <div className={`size-8 rounded-lg flex items-center justify-center flex-shrink-0 ${color}`}><Icon size={15} /></div>
               <div>
                 <div className="font-semibold text-text-primary text-sm">{title}</div>
                 <div className="font-mono text-xs text-text-muted mt-0.5 leading-relaxed">{desc}</div>
@@ -133,23 +176,48 @@ export function Settings() {
         </div>
       </section>
 
-      {/* Save */}
-      <button
-        onClick={handleSave}
-        className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all ${
-          saved
-            ? 'bg-accent/20 text-accent border border-accent/30'
-            : 'bg-accent text-bg hover:bg-accent/90 shadow-lg shadow-accent/20'
-        }`}
-      >
-        {saved ? (
-          <>
-            <Check size={15} /> Saved!
-          </>
-        ) : (
-          'Save preferences'
-        )}
-      </button>
+      {/* Privacy */}
+      <section className="mb-5">
+        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Privacy</div>
+        <div className="bg-surface border border-border rounded-2xl overflow-hidden divide-y divide-border">
+          {[
+            { icon: Shield, title: 'Zero server storage', desc: 'Your profile, resume, applications, and API keys are stored only in your browser localStorage.', color: 'text-accent bg-accent/10' },
+            { icon: Shield, title: 'Read-only email access', desc: 'GhostTracker can only read your emails — never send, modify, or delete.', color: 'text-accent bg-accent/10' },
+          ].map(({ icon: Icon, title, desc, color }) => (
+            <div key={title} className="flex items-start gap-4 p-5">
+              <div className={`size-8 rounded-lg flex items-center justify-center flex-shrink-0 ${color}`}><Icon size={15} /></div>
+              <div>
+                <div className="font-semibold text-text-primary text-sm">{title}</div>
+                <div className="font-mono text-xs text-text-muted mt-0.5 leading-relaxed">{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Danger zone */}
+      <section>
+        <div className="font-mono text-xs text-text-muted uppercase tracking-widest mb-3">Danger Zone</div>
+        <div className="bg-surface border border-danger/20 rounded-2xl p-5">
+          <div className="font-semibold text-text-primary text-sm mb-1">Clear all local data</div>
+          <div className="font-mono text-xs text-text-muted mb-4">Deletes your profile, applications, AI key, and all settings from this browser.</div>
+          {showClearConfirm ? (
+            <div className="flex gap-3">
+              <button onClick={handleClearAll} className="px-4 py-2 bg-danger text-white rounded-xl font-mono text-xs font-semibold hover:bg-danger/90 transition-all">
+                Yes, delete everything
+              </button>
+              <button onClick={() => setShowClearConfirm(false)} className="px-4 py-2 bg-surface border border-border text-text-muted rounded-xl font-mono text-xs hover:text-text-primary transition-colors">
+                Cancel
+              </button>
+            </div>
+          ) : (
+            <button onClick={() => setShowClearConfirm(true)}
+              className="flex items-center gap-2 px-4 py-2 bg-danger/10 border border-danger/20 text-danger rounded-xl font-mono text-xs hover:bg-danger/20 transition-all">
+              <Trash2 size={13} /> Clear All Data
+            </button>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

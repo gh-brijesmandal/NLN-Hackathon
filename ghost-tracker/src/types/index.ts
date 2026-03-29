@@ -11,16 +11,21 @@ export interface Application {
   id: string;
   company: string;
   role: string;
-  appliedDate: string;      // ISO date string
-  lastActivityDate: string; // ISO date string
+  appliedDate: string;
+  lastActivityDate: string;
   status: ApplicationStatus;
   emailThreadId?: string;
   emailSnippet?: string;
   domain?: string;
-  ghostedAt?: string;       // ISO date string when ghosted label was applied
+  ghostedAt?: string;
   daysSinceApplied: number;
   daysSinceActivity: number;
   isGhosted: boolean;
+  location?: string;
+  salary?: string;
+  notes?: string;
+  jobUrl?: string;
+  statusHistory?: { status: ApplicationStatus; date: string; note?: string }[];
 }
 
 export interface GmailMessage {
@@ -63,4 +68,65 @@ export interface StatsSnapshot {
   offers: number;
   rejected: number;
   responseRate: number;
+}
+
+export interface UserProfile {
+  name: string;
+  email: string;
+  phone?: string;
+  location?: string;
+  linkedin?: string;
+  github?: string;
+  portfolio?: string;
+  university?: string;
+  major?: string;
+  graduationYear?: string;
+  gpa?: string;
+  skills: string[];
+  bio?: string;
+  targetRoles: string[];
+  targetLocations: string[];
+  workAuthorization: 'citizen' | 'gc' | 'h1b_needed' | 'opt' | 'stem_opt' | 'other';
+  resumeText?: string;
+  resumeFileName?: string;
+}
+
+export interface JobSuggestion {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  type: string;
+  url: string;
+  source: string;
+  postedDate?: string;
+  salary?: string;
+  sponsorsH1B?: boolean;
+  matchScore?: number;
+  description?: string;
+}
+
+export interface H1BCompany {
+  employer: string;
+  approvals: number;
+  denials: number;
+  year: number;
+  industry?: string;
+}
+
+export interface AISettings {
+  provider: 'openai' | 'anthropic' | 'gemini' | 'groq';
+  apiKey: string;
+  model: string;
+}
+
+export interface RedditPost {
+  id: string;
+  title: string;
+  url: string;
+  subreddit: string;
+  score: number;
+  numComments: number;
+  selftext?: string;
+  createdAt: string;
 }
